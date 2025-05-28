@@ -78,7 +78,7 @@ main {
 /*Positioning der Anchors*/
 .anchor {
   display: block;
-  height: 30px;         /* Höhe des Abstands */
+  height: 20px;         /* Höhe des Abstands */
   visibility: hidden;   /* unsichtbar */
 }
 
@@ -225,6 +225,12 @@ width: 70%;  /* fast volle Breite */
     min-width: 60px;
     max-width: 90px;
   }
+
+  .helper-card {
+  width: 75%;
+  font-size: 12px;
+ 
+}
 }
 
 
@@ -238,5 +244,11 @@ width: 70%;  /* fast volle Breite */
     min-width: 60px;
     max-width: 90px;
   }
+
+   .helper-card {
+  width: 75%;
+  font-size: 16px;
+ 
+}
 
 }
