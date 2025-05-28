@@ -1,4 +1,4 @@
-# TL2 Single-Page-Application for Festival Organization
+# T02 Single-Page-Application for Festival Organization (Web-Technologien)
 
 Authors: Alice Alferink & Emilia Kistowski
 
