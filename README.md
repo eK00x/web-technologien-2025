@@ -4,7 +4,8 @@ Authors: Alice Alferink & Emilia Kistowski
 
 ## Description
 The Website is a simple web application that aims to help with the organization of the festival "Rock am See".
-On top of the site there a countdown counts the time left until the festival starts. Further sections display Information, Events and a lst of helpers, who have registered to volonteer at one of the events. Via a dropdown menu the list of helpers can be sorted by four different criteria. On top of the page there is a fixed navigation bar, that enables the user to jump to the seperate sections of the site quickly. 
+On top of the site a countdown shows the time left until the festival starts. Three further sections display information, events and a list of helpers, who have registered to volunteer at one of the events. Via a dropdown menu the list of helpers can be sorted by name or registration date, in descending or ascending order. On top of the page there is a fixed navigation bar, that enables the user to jump to all three sections of the site quickly. During loading of the helpers information, a three-dot animation signifies the loading process.  
+
 
 ## Folder Structure
 🗎 home.html
@@ -12,6 +13,7 @@ On top of the site there a countdown counts the time left until the festival sta
 🗎 style.css
 🖼️festival.jpg
 🗎 README.md
+
 
 ## How to Start/Use the Website
 Step 1: Download the folder.
@@ -25,8 +27,6 @@ Step 5: Enjoy! 😊
 - API: https://randomuser.me/api/?results=30&seed=a
 - Code Sandbox: https://codesandbox.io/p/sandbox/luoos 
 - Documentation of Date() Constructor: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
-
-
 
 
 ## Testing
