@@ -166,16 +166,84 @@ h2 {
 
 /* CSS-Ladeanzeige zeigt Ladezustand während der API-Abfrage an */
 .loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #555;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
+  :root {
+  /* general vars */
+  --three-dots__size: 100px;
+  --three-dots__color: black;
+  --three-dots__dot-diameter: calc(var(--three-dots__size) / 5);
+  --three-dots__dot-left-margin: calc(var(--three-dots__dot-diameter) / 2);
+
+  /* animation variables */
+  --three-dots__translateX-timing-function: cubic-bezier(0, 1, 1, 0);
+  --three-dots__opacity-timing-function: ease-in-out;
+  --three-dots__duration: 2s;
 }
 
-@keyframes spin {
+@keyframes three-dots__translateX {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes three-dots__appearDisappear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.three-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--debug-size-color);
+  width: var(--three-dots__size);
+  height: var(--three-dots__size);
+}
+
+.three-dots__dot {
+  background-color: var(--three-dots__color);
+  height: var(--three-dots__dot-diameter);
+  width: var(--three-dots__dot-diameter);
+  border-radius: var(--three-dots__dot-diameter);
+}
+
+.three-dots__dot + .three-dots__dot {
+  margin-left: var(--three-dots__dot-left-margin);
+}
+
+.three-dots__dot--first {
+  animation: three-dots__translateX var(--three-dots__duration) infinite 0.4s
+      var(--three-dots__translateX-timing-function),
+    three-dots__appearDisappear var(--three-dots__duration) infinite 0.4s
+      var(--three-dots__opacity-timing-function);
+}
+
+.three-dots__dot--second {
+  animation: three-dots__translateX var(--three-dots__duration) infinite 0.2s
+      var(--three-dots__translateX-timing-function),
+    three-dots__appearDisappear var(--three-dots__duration) infinite 0.2s
+      var(--three-dots__opacity-timing-function);
+}
+
+.three-dots__dot--third {
+  animation: three-dots__translateX var(--three-dots__duration) infinite 0s
+      var(--three-dots__translateX-timing-function),
+    three-dots__appearDisappear var(--three-dots__duration) infinite 0s
+      var(--three-dots__opacity-timing-function);
+}
+
+}
+
+/*@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -183,7 +251,7 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
-}
+}*/
 
 .helper-card {
   background-color: #F2F2F2;
