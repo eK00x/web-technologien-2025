@@ -166,84 +166,61 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* CSS-Ladeanzeige zeigt Ladezustand während der API-Abfrage an */
-.loader {
-  :root {
-  /* general vars */
+/*Neuer three dots Loader*/
+
+:root {
   --three-dots__size: 100px;
-  --three-dots__color: black;
+  --three-dots__color: #F2B90F;
   --three-dots__dot-diameter: calc(var(--three-dots__size) / 5);
   --three-dots__dot-left-margin: calc(var(--three-dots__dot-diameter) / 2);
-
-  /* animation variables */
-  --three-dots__translateX-timing-function: cubic-bezier(0, 1, 1, 0);
-  --three-dots__opacity-timing-function: ease-in-out;
-  --three-dots__duration: 2s;
+  --three-dots__duration: 1.2s;
 }
 
-@keyframes three-dots__translateX {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
+@keyframes three-dots__bounce {
 
-@keyframes three-dots__appearDisappear {
-  0% {
-    opacity: 0;
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.3;
   }
-  50% {
+
+  40% {
+    transform: scale(1);
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-  }
 }
 
-.three-dots {
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--debug-size-color);
+  gap: var(--three-dots__dot-left-margin);
   width: var(--three-dots__size);
-  height: var(--three-dots__size);
-}
-
-.three-dots__dot {
-  background-color: var(--three-dots__color);
   height: var(--three-dots__dot-diameter);
+  margin: 2rem auto;
+}
+
+.loader div {
   width: var(--three-dots__dot-diameter);
-  border-radius: var(--three-dots__dot-diameter);
+  height: var(--three-dots__dot-diameter);
+  background-color: var(--three-dots__color);
+  border-radius: 50%;
+  animation: three-dots__bounce var(--three-dots__duration) infinite ease-in-out;
 }
 
-.three-dots__dot + .three-dots__dot {
-  margin-left: var(--three-dots__dot-left-margin);
+.loader div:nth-child(1) {
+  animation-delay: -0.24s;
 }
 
-.three-dots__dot--first {
-  animation: three-dots__translateX var(--three-dots__duration) infinite 0.4s
-      var(--three-dots__translateX-timing-function),
-    three-dots__appearDisappear var(--three-dots__duration) infinite 0.4s
-      var(--three-dots__opacity-timing-function);
+.loader div:nth-child(2) {
+  animation-delay: -0.12s;
 }
 
-.three-dots__dot--second {
-  animation: three-dots__translateX var(--three-dots__duration) infinite 0.2s
-      var(--three-dots__translateX-timing-function),
-    three-dots__appearDisappear var(--three-dots__duration) infinite 0.2s
-      var(--three-dots__opacity-timing-function);
+.loader div:nth-child(3) {
+  animation-delay: 0;
 }
 
-.three-dots__dot--third {
-  animation: three-dots__translateX var(--three-dots__duration) infinite 0s
-      var(--three-dots__translateX-timing-function),
-    three-dots__appearDisappear var(--three-dots__duration) infinite 0s
-      var(--three-dots__opacity-timing-function);
-}
-
-}
 
 /*@keyframes spin {
   0% {
