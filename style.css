@@ -85,11 +85,13 @@ h2 {
 /* TABELLE */
 .event-table {
   width: 57%;
-  margin: auto;
+   max-width: 100%;
+  margin: 40px auto;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   font-size: 13px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  table-layout: auto; 
 }
 
 .event-table th,
@@ -99,6 +101,7 @@ h2 {
   text-align: left;
   vertical-align: top;
   background: white;
+   white-space: normal; 
 }
 
 .event-table th {
@@ -172,3 +175,45 @@ h2 {
   height: 50px;
   margin-right: 15px;
 }
+
+@media (min-width: 360px) and (max-width: 599px) {
+   .event-table {
+    
+    font-size: 10px;
+  } 
+  
+ 
+
+.event-table th,
+.event-table td {
+}
+
+
+.event-table th {
+  
+}
+
+/* Spalte 1: nur so breit wie längster Inhalt, kein Umbruch */
+.event-table th:first-child,
+.event-table td:first-child {
+  
+}
+
+/* Spalte 3 Überschrift: kein Zeilenumbruch */
+.event-table th:nth-child(3), 
+.event-table td:nth-child(3) {
+
+}
+
+}
+
+
+@media (min-width: 600px) {
+  .event-table {
+    width: 25%;
+  }
+}
+
+
+
+
