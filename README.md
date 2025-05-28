@@ -1,4 +1,4 @@
-# TL2 Festival Organisation  -  Single-Page-Application
+# TL2 Single-Page-Application for Festival Organization
 
 Authors: Alice Alferink & Emilia Kistowski
 
