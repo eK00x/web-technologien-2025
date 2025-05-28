@@ -75,11 +75,19 @@ main {
   max-width: 800px;
 }
 
+/*Positioning der Anchors*/
+.anchor {
+  display: block;
+  height: 30px;         /* Höhe des Abstands */
+  visibility: hidden;   /* unsichtbar */
+}
+
+
 /* INFORMATION */
 
 h2 {
   font-size: 1.1rem;
-  margin: 0 0 2px 0;
+  margin: 0 0 20px 0;
 }
 
 
