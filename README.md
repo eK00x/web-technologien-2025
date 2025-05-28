@@ -16,11 +16,11 @@ On top of the site a countdown shows the time left until the festival starts. Th
 
 
 ## How to Start/Use the Website
-Step 1: Download the folder.
-Step 2: If needed, unzip the folder.
-Step 3: Open the folder in your file explorer and click on the file "home.html" (this should open the file in the Browser. If not, right click on the file and the "open with" > your browser.)
-Step 4: Navigate through the one-pager via scrolling or jump to the needed section via the navigation bar. 
-Step 5: Enjoy! 😊
+1. Step: Download the folder.
+2. Step: If needed, unzip the folder.
+3. Step: Open the folder in your file explorer and click on the file "home.html" (this should open the file in the Browser. If not, right click on the file and the "open with" > your browser.)
+4. Step: Navigate through the one-pager via scrolling or jump to the needed section via the navigation bar. 
+5. Step: Enjoy! 😊
 
 
 ## Used Resources
