@@ -13,7 +13,7 @@ body {
 h1 {
   font-size: 1.7rem;
   font-weight: 700;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 /* NAVIGATION */
@@ -52,19 +52,33 @@ main {
 }
 
 /*Styling und Verhalten der Section-Boxen*/
-
 .section {
-
   background-color: #208C81;
   border-radius: 10px;
   width: 80%;
   padding: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   margin: 30px auto auto auto;
   max-width: 800px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3))
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+#countdown {
+  margin: 20px auto;
+  padding: 10px;
+  padding-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+}
+
+/*Positioning der Anchors*/
+.anchor {
+  margin-top: 20px;
+}
 
 /* INFORMATION */
 
@@ -95,7 +109,7 @@ h2 {
 /* TABELLE */
 .event-table {
   width: 57%;
-   max-width: 100%;
+  max-width: 100%;
   margin: 40px auto;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
@@ -103,6 +117,8 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   table-layout: auto; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: auto;
 }
 
 .event-table th,
@@ -114,7 +130,7 @@ h2 {
   background: white;
     word-wrap: break-word; /* alte Browser */
   overflow-wrap: break-word; /* moderner */
-   white-space: normal; 
+  white-space: normal;
 }
 
 .event-table th {
@@ -191,12 +207,12 @@ h2 {
 }
 
 @media (min-width: 360px) and (max-width: 599px) {
-   .event-table {
-    width: 70%;  /* fast volle Breite */
+  .event-table {
+width: 70%;  /* fast volle Breite */
     font-size: 11px;
-  } 
-  
- 
+  }
+
+
 
 .event-table th:first-child,
   .event-table td:first-child,
@@ -221,7 +237,3 @@ h2 {
   }
 
 }
-
-
-
-
