@@ -30,7 +30,7 @@
     <main>
         <!--Section 1: Countdown-->
         <section class="section" id="countdown">
-            <h3>Countdown</h3>
+            <h1>Countdown</h1>
             <div id="count">
                 <span id="days">0</span>Tage
                 <span id="hours">00</span>Std
@@ -39,26 +39,82 @@
             </div>
         </section>
 
-        <!--Section 1: Information-->
+        <!--Section 2: Information-->
         <section class="section" id="info">
-            <h3>Information</h3>
+            <h1>Information</h1>
+            <h2>Verfügbare Informationen über Freiwillige:</h2>
+            <details>
+  <summary>Persönliche Daten</summary>
+  <ul>
+    <li>Geschlecht</li>
+    <li>Vorname</li>
+    <li>Nachname</li>
+    <li>Geburtsdatum</li>
+    <li>Alter</li>
+    <li>Nationalität</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Adresse</summary>
+  <ul>
+    <p></p>Straße<br>Hausnummer<br>Stadt<br>PLZ<br>Land</p>
+</details>
+
+<details>
+  <summary>Kontakt</summary>
+    <p>E-Mail<br>Telefonnummer<br>Handynummer</p>
+</details>
+
+<details>
+  <summary>Technische Infos</summary>
+    <p>Benutzername<br>ID-Nummer</p>
+</details>
+
+
         </section>
 
-        <!--Section 1: Veranstalungen-->
+        <!--Section 3: Veranstaltungen-->
         <section class="section" id="events">
-            <h3>Veranstaltungen</h3>
+            <h1>Veranstaltungen</h1>
+
+            <table class="event-table">
+                <tr>
+                    <th>Event</th>
+                    <th>Beschreibung</th>
+                    <th>Erforderliche Merkmale der Helfer:innen</th>
+                </tr>
+                <tr>
+                    <td>Security Checkpoint</td>
+                    <td>Kontrolle der Ein- und Ausgänge,<br> Besucher:innen-Check,<br> Zugangskontrolle</td>
+                    <td>Mindestalter: 18 Jahre</td>
+                </tr>
+                <tr>
+                    <td>Bühne</td>
+                    <td>Technikbetreuung</td>
+                    <td>Mindestalter: 18 Jahre</td>
+                </tr>
+                <tr>
+                    <td>Getränkestand</td>
+                    <td>Ausgabe von Getränken,<br> Bestandsüberwachung und Kassiertätigkeiten</td>
+                    <td>Mindestalter: 16 Jahre</td>
+                </tr>
+                </table>
+
+
         </section>
 
-        <!--Section 1: Helfer:innen-->
+        <!-- Section 4: Helfer:innen -->
         <section class="section" id="helpers">
-            <h3>Helfer:innen</h3>
-
-            <select>
+            <h1>Helfer:innen</h1>
+            <select id="sortSelect" class="sort-select">
                 <option value="name-asc">Name (asc)</option>
                 <option value="name-desc">Name (desc)</option>
                 <option value="reg-asc">Registrierungsdatum (asc)</option>
                 <option value="reg-desc">Registrierungsdatum (desc)</option>
             </select>
+            <div id="loader" class="loader"></div>
+            <div id="helperList"></div>
         </section>
     </main>
 
