@@ -75,11 +75,6 @@ main {
   max-width: 800px;
 }
 
-/*Positioning der Anchors*/
-.anchor {
-  margin-top: 20px;
-}
-
 /* INFORMATION */
 
 h2 {
@@ -116,9 +111,10 @@ h2 {
   font-size: 13px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  table-layout: auto; 
+  table-layout: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   table-layout: auto;
+  border-radius: 10px;
 }
 
 .event-table th,
@@ -128,8 +124,10 @@ h2 {
   text-align: left;
   vertical-align: top;
   background: white;
-    word-wrap: break-word; /* alte Browser */
-  overflow-wrap: break-word; /* moderner */
+  word-wrap: break-word;
+  /* alte Browser */
+  overflow-wrap: break-word;
+  /* moderner */
   white-space: normal;
 }
 
@@ -208,17 +206,19 @@ h2 {
 
 @media (min-width: 360px) and (max-width: 599px) {
   .event-table {
-width: 70%;  /* fast volle Breite */
+    width: 70%;
+    /* fast volle Breite */
     font-size: 11px;
   }
 
 
 
-.event-table th:first-child,
+  .event-table th:first-child,
   .event-table td:first-child,
   .event-table th:nth-child(3),
   .event-table td:nth-child(3) {
-    width: auto; /* auf natürliche Größe */
+    width: auto;
+    /* auf natürliche Größe */
     min-width: 60px;
     max-width: 90px;
   }
@@ -228,10 +228,11 @@ width: 70%;  /* fast volle Breite */
 
 @media (min-width: 600px) {
   .event-table th:first-child,
-  
+
   .event-table th:nth-child(3),
   .event-table td:nth-child(3) {
-    width: auto; /* auf natürliche Größe */
+    width: auto;
+    /* auf natürliche Größe */
     min-width: 60px;
     max-width: 90px;
   }
