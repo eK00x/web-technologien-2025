@@ -179,6 +179,15 @@ main {
 }
 
 /* --------------------------- CSS-"Ladebalken": Three Dots Animation ------------------------- */
+/* Ladebalken (Animation mit drei Punkten) */
+:root {
+  --three-dots__size: 100px;
+  --three-dots__color: #F2B90F;
+  --three-dots__dot-diameter: calc(var(--three-dots__size) / 5);
+  --three-dots__dot-left-margin: calc(var(--three-dots__dot-diameter) / 2);
+  --three-dots__duration: 1.2s;
+}
+
 /* Keyframe Animation für Pulsieren der Punkte */
 @keyframes three-dots__bounce {
 
