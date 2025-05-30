@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
-</lang>
-<html>
 
 <head>
     <meta charset="UTF-8">
     <title>Festival-Organisation</title>
-    <!--Einbindung von ominösem Link der die Website responsiv machen soll-->
+    <!-- Einbindung von responsivem Meta-Tag, sorgt dafür, dass die Website auf verschiedenen Bildschirmgrößen gut aussieht -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Einbindung von CSS Style Sheet-->
+    <!--Einbindung eines externen CSS Style Sheets-->
     <link rel="stylesheet" href="style.css">
 
-    <!--Einbindung von JavaScript Dokument-->
+    <!--Einbindung eines externen JS Dokuments-->
     <script src="script.js" defer></script>
-
 </head>
 
 <body>
-    <!--navbar mit anchors, scrollt beim Anklicken zu jeweiligen Sections-->
+    <!-- Navigation oben auf der Seite mit Links zu den jeweiligen Abschnitten -->
     <header>
         <nav class="topnav">
             <a href="#info">Information</a>
@@ -28,9 +25,11 @@
     </header>
 
     <main>
-        <!--Section 1: Countdown-->
+        <h1>Festival-Organisation 2025</h1>
+
+        <!-- Section 1: Countdown -->
         <section class="section" id="countdown">
-            <h1>Countdown</h1>
+            <h2>Countdown</h2>
             <div id="count">
                 <span id="days">0</span>Tage
                 <span id="hours">00</span>Std
@@ -41,39 +40,50 @@
             <p>Beginn: 14. Juni 2025, 18:00 Uhr 🎉</p>
         </section>
 
-        <!--Section 2: Information-->
-        <anchor class="anchor" id="info"></anchor>
-        <section class="section">
-            <h1>Information</h1>
-            <h2>Verfügbare Informationen über Freiwillige:</h2>
-            <details>
-                <summary>Persönliche Daten</summary>
-                <p>Geschlecht<br>Vorname<br>Nachname<br>Geburtsdatum<br>Alter<br>Nationalität</p>
-            </details>
+        <!-- Section 2: Information -->
+        <section class="section" id="info">
+            <h2>Information</h2>
 
-            <details>
-                <summary>Adresse</summary>
-                <p>Straße<br>Hausnummer<br>Stadt<br>PLZ<br>Land</p>
-            </details>
+            <h3>Verfügbare Informationen über Freiwillige:</h3>
 
-            <details>
-                <summary>Kontakt</summary>
-                <p>E-Mail<br>Telefonnummer<br>Handynummer</p>
-            </details>
+            <!-- Akkordeon-Element: Persönliche Daten -->
+            <div class="collapsible">
+                <button class="collapsible-btn">⯈ Persönliche Daten</button>
+                <div class="collapsible-content">
+                    <p>Geschlecht<br>Vorname<br>Nachname<br>Geburtsdatum<br>Alter<br>Nationalität</p>
+                </div>
+            </div>
 
-            <details>
-                <summary>Technische Infos</summary>
-                <p>Benutzername<br>ID-Nummer</p>
-            </details>
-
-
+            <!-- Akkordeon-Element: Adresse -->
+            <div class="collapsible">
+                <button class="collapsible-btn">⯈ Adresse</button>
+                <div class="collapsible-content">
+                    <p>Straße<br>Hausnummer<br>Stadt<br>PLZ<br>Land</p>
+                </div>
+            </div>
+            
+            <!-- Akkordeon-Element: Kontakt -->
+            <div class="collapsible">
+                <button class="collapsible-btn">⯈ Kontakt</button>
+                <div class="collapsible-content">
+                    <p>E-Mail<br>Telefonnummer<br>Handynummer</p>
+                </div>
+            </div>
+            
+            <!-- Akkordeon-Element: Technische Infos -->
+            <div class="collapsible">
+                <button class="collapsible-btn">⯈ Technische Infos</button>
+                <div class="collapsible-content">
+                    <p>Benutzername<br>ID-Nummer</p>
+                </div>
+            </div>
         </section>
 
-        <!--Section 3: Veranstaltungen-->
-        <anchor class="anchor" id="events"></anchor>
-        <section class="section">
-            <h1>Veranstaltungen</h1>
+        <!-- Section 3: Veranstaltungen -->
+        <section class="section" id="events">
+            <h2>Veranstaltungen</h2>
 
+            <!-- Tabelle mit Events und Anforderungen an Helfer:innen -->
             <table class="event-table">
                 <tr>
                     <th>Event</th>
@@ -96,29 +106,31 @@
                     <td>Mindestalter: 18 Jahre</td>
                 </tr>
             </table>
-
-
         </section>
 
         <!-- Section 4: Helfer:innen -->
-        <anchor class="anchor" id="helpers"></anchor>
-        <section class="section">
-            <h1>Helfer:innen</h1>
+        <section class="section" id="helpers">
+            <h2>Helfer:innen</h2>
+
+            <!-- Dropdown-Menü zur Sortierung der Helfer:innen-Liste -->
             <select id="sortSelect" class="sort-select">
                 <option value="name-asc">Name (asc)</option>
                 <option value="name-desc">Name (desc)</option>
                 <option value="reg-asc">Registrierungsdatum (asc)</option>
                 <option value="reg-desc">Registrierungsdatum (desc)</option>
             </select>
+
+            <!-- Ladeanimation während Daten geladen werden -->
             <div id="loader" class="loader">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+
+            <!-- Container für die dynamisch erzeugte Helfer:innen-Liste -->
             <div id="helperList"></div>
         </section>
     </main>
-
 </body>
 
 </html>

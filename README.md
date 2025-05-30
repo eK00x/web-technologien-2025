@@ -8,11 +8,11 @@ On top of the site a countdown shows the time left until the festival starts. Th
 
 
 ## Folder Structure
-- 🗎 home.html
-- 🗎 script.js
-- 🗎 style.css
-- 🖼️festival.jpg
-- 🗎 README.md
+- home.html
+- script.js
+- style.css
+- festival.jpg
+- README.md
 
 
 ## How to Start/Use the Website

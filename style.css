@@ -1,26 +1,41 @@
-/*Styling des bodys*/
+/* Smoothes Scrollen bei Sprung-Links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styling des Bodys */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   text-align: center;
   background-attachment: fixed;
   background-color: #e2f1f8;
-  font-family: "Arial", "Helvetica", sans-serif;
   background-image: url("festival.jpg");
   background-repeat: no-repeat;
   font-family: "Arial", "Helvetica", sans-serif;
 }
 
-/*Styling aller h1 Überschriften*/
+/* h1 Überschrift */
 h1 {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-top: 20px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 30px 0 0 0;
 }
 
-/* NAVIGATION */
+/* h2 Überschrift */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 8px 0 20px;
+}
 
-/*Styling und Verhalten der Navbar*/
+/* h3 Überschrift */
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: -12px 0 6px 0;
+}
+
+/* Navbar */
 .topnav {
   display: flex;
   justify-content: left;
@@ -31,69 +46,45 @@ h1 {
   z-index: 1000;
 }
 
-/*Styling und Verhalten der Links in der Navbar*/
+/* Links in der Navbar */
 .topnav a {
-  float: left;
   color: #000000;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
+/* Hover-Effekt für Links */
 .topnav a:hover {
   background-color: #F2CC0F;
   color: white;
 }
 
-
-/*Styling und Verhalten des Main-Blocks aller Seiten*/
+/* Main-Abschnitt */
 main {
   padding-top: 40px;
   padding-bottom: 70px;
 }
 
-/*Styling und Verhalten der Section-Boxen*/
+/* Section-Boxen */
 .section {
   background-color: #208C81;
   border-radius: 10px;
   width: 80%;
   padding: 10px;
   padding-bottom: 20px;
-  margin: 30px auto -30px auto;
+  margin: 50px auto;
   max-width: 800px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  scroll-margin-top: 60px; /* Höhe der fixen Navbar */
 }
 
 
-
-/*Positioning der Anchors*/
-.anchor {
-  display: block;
-  height: 30px;
-  /* Höhe des Abstands */
-  visibility: hidden;
-  /* unsichtbar */
-}
-
-
-/* INFORMATION */
-
-/*Styling aller h2 Überschriften*/
-h2 {
-  font-size: 1.1rem;
-  margin: 0 0 20px 0;
-}
-
-
-
-/* COUNTDOWN */
-
-/*Styling des Contdowns*/
+/* --------------------------------------------------- COUNTDOWN ------------------------------------------------------- */
+/* Container für Countdown */
 #countdown {
-  margin: 30px auto -30px auto;
-  padding: 10px;
-  padding-bottom: 20px;
+  margin: 22px auto 0 auto;
+  padding: 10px 10px 20px 10px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.5);
@@ -102,102 +93,107 @@ h2 {
   max-width: 800px;
 }
 
-/*Styling der Countdown-Spans (days, hours, minutes, seconds)*/
+/* Styling der Countdown-Zahlen (days, hours, minutes, seconds) */
 #count span {
   font-size: 2em;
   margin: 0 10px;
 }
 
+#countdown p {
+  margin: 0 10px;
+}
 
 
-/* TABELLE */
+/* --------------------------------------------------- INFORMATION-TEIL ------------------------------------------------------- */
+/* Akkordeon-Elemente */
+.collapsible {
+  margin: 0 0 -5px 0;
+}
 
-/*Styling der gesamten Tabelle in der Section "Veranstaltungen"*/
+/* Button zum Aufklappen */
+.collapsible-btn {
+  background-color: #208C81;
+  border: none;
+  width: 30%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Inhalt im Akkordeon */
+.collapsible p {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin: 2px 0 20px 0;
+}
+
+/* Akkordeon Inhalt zunächst verstecken */
+.collapsible-content {
+  display: none;
+}
+
+/* Akkordeon Inhalt wenn offen */
+.collapsible-content.open {
+  display: block;
+}
+
+
+/* --------------------------------------------------- TABELLE ------------------------------------------------------- */
+/* Tabelle "Veranstaltungen" */
 .event-table {
-  width: 57%;
+  width: 80%;
   max-width: 100%;
-  margin: 40px auto;
+  margin: 27px auto;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   font-size: 13px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-  table-layout: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   table-layout: auto;
   border-radius: 10px;
 }
 
-/*Styling der Tabellen-Header und Table-Zellen*/
+/* Tabellen-Header und Table-Zellen */
 .event-table th,
 .event-table td {
-  border: 1px solid #ddd;
+  border: 1px solid;
   padding: 12px 15px;
   text-align: left;
   vertical-align: top;
   background: white;
-  word-wrap: break-word;
-  /* alte Browser */
-  overflow-wrap: break-word;
-  /* moderner */
-  white-space: normal;
+  overflow-wrap: break-word;    /* Wortumbruch */
+  white-space: normal;          /* Normaler Zeilenumbruch */
 }
 
+/* Tabellen-Header */
 .event-table th {
   background-color: #F2B90F;
   color: black;
   font-weight: bold;
 }
 
-/* Spalte 1: nur so breit wie längster Inhalt, kein Umbruch */
-.event-table th:first-child,
-.event-table td:first-child {
-  white-space: nowrap;
-  width: 1%;
-  min-width: max-content;
-}
 
-/* Spalte 3 Überschrift: kein Zeilenumbruch */
-.event-table th:nth-child(3),
-.event-table td:nth-child(3) {
-  white-space: normal;
-  width: 1%;
-  min-width: max-content;
-}
-
-
-
-/* HELFER:INNEN */
-
-/*Styling der Section Helfer:innen*/
+/* --------------------------------------------------- HELFER:INNEN ------------------------------------------------------- */
+/* Abstand unter dem Sortieren Dropdown */
 .sort-select {
   margin-bottom: 10px;
 }
 
-/*CSS-"Ladebalken": Three Dots Animation*/
-:root {
-  --three-dots__size: 100px;
-  --three-dots__color: #F2B90F;
-  --three-dots__dot-diameter: calc(var(--three-dots__size) / 5);
-  --three-dots__dot-left-margin: calc(var(--three-dots__dot-diameter) / 2);
-  --three-dots__duration: 1.2s;
-}
-
+/* --------------------------- CSS-"Ladebalken": Three Dots Animation ------------------------- */
+/* Keyframe Animation für Pulsieren der Punkte */
 @keyframes three-dots__bounce {
 
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
+  0%, 80%, 100% {
+    transform: scale(0);    /* Klein, unsichtbar */
     opacity: 0.3;
   }
 
   40% {
-    transform: scale(1);
+    transform: scale(1);    /* Groß, sichtbar */
     opacity: 1;
   }
 }
 
+/* Container für Ladeanimation */
 .loader {
   display: flex;
   justify-content: center;
@@ -208,6 +204,7 @@ h2 {
   margin: 2rem auto;
 }
 
+/* Einzelne Punkte der Animation */
 .loader div {
   width: var(--three-dots__dot-diameter);
   height: var(--three-dots__dot-diameter);
@@ -216,6 +213,7 @@ h2 {
   animation: three-dots__bounce var(--three-dots__duration) infinite ease-in-out;
 }
 
+/* Verzögerungen für die einzelnen Punkte, damit nacheinander pulsieren */
 .loader div:nth-child(1) {
   animation-delay: -0.24s;
 }
@@ -228,12 +226,12 @@ h2 {
   animation-delay: 0;
 }
 
-/*Styling der Cards, die die jeweils einen Helfer/ eine Helferin zeigen*/
+
+/* --------------------------------------------------- HELPER-CARDS ------------------------------------------------------- */
 .helper-card {
   background-color: #F2F2F2;
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 10px 0;
   border-radius: 5px;
   display: flex;
   text-align: left;
@@ -242,7 +240,7 @@ h2 {
   margin: 10px auto;
 }
 
-/*Verhalten und Maße der Helfer:innen Bilder*/
+/* Helfer:innen Bilder */
 .helper-card img {
   display: block;
   border-radius: 50%;
@@ -251,41 +249,46 @@ h2 {
   margin-right: 15px;
 }
 
-/*Responsive Design: Mobile Version*/
+
+/* --------------------------------------------------- RESPONSIVE-DESIGN ------------------------------------------------------- */
+/* --------------------------- Responsive Design: Mobile Version ------------------------- */
 @media (min-width: 360px) and (max-width: 599px) {
-  .event-table {
-    width: 70%;
-    /* fast volle Breite */
-    font-size: 11px;
+  h1 {
+    font-size: 1.7rem;
   }
 
-  .event-table th:first-child,
-  .event-table td:first-child,
-  .event-table th:nth-child(3),
-  .event-table td:nth-child(3) {
-    width: auto;
+  h2 {
+    font-size: 1.4rem;
+    margin: 4px 0 20px 0;
+  }
 
-    /* auf natürliche Größe */
-    min-width: 60px;
-    max-width: 90px;
+  h3 {
+    font-size: 1rem;
+    margin: -10px 0 6px 0;
+  }
+    
+  .collapsible-btn {
+    width: 50%;
+  }
+
+  .event-table {
+    width: 70%;
+    font-size: 11px;
   }
 
   .helper-card {
     width: 75%;
     font-size: 12px;
-
   }
 }
 
 
-/*Responsive Design: Desktop Version*/
+/* --------------------------- Responsive Design: Desktop Version ------------------------- */
 @media (min-width: 600px) {
   .event-table th:first-child,
-
   .event-table th:nth-child(3),
   .event-table td:nth-child(3) {
     width: auto;
-    /* auf natürliche Größe */
     min-width: 60px;
     max-width: 90px;
   }
@@ -293,7 +296,5 @@ h2 {
   .helper-card {
     width: 75%;
     font-size: 16px;
-
   }
-
 }
