@@ -1,6 +1,7 @@
 {
   "name": "tl3-template",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "server": "nodemon server/index.js",
