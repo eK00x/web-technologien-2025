@@ -3,7 +3,10 @@ const margin = { top: 20, right: 20, bottom: 30, left: 40 },
     width = 650 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&hourly=temperature_2m&timezone=Europe%2FBerlin&start_date=2025-06-12&end_date=2025-06-22").then((data) => {
+/*Nur, wenn öffentliche API genutzt werden soll (d.h. ohne Backend)
+// d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&hourly=temperature_2m&timezone=Europe%2FBerlin&start_date=2025-06-12&end_date=2025-06-22").then((data) => 
+    
+   {
     const radius = Math.min(width, height) / 2 - margin.top;
 
     // Test-Daten laden
@@ -17,6 +20,7 @@ d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&
             "value": 70
         }
     ]
+
 
     // SVG-Elemente erstellen
     const piechart = d3
@@ -58,6 +62,8 @@ d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&
         .style('fill', 'black')
         .style('font-family', 'Arial');
 })
+
+*/
 
 d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&hourly=cloud_cover&timezone=Europe%2FBerlin&start_date=2025-06-12&end_date=2025-06-22").then((data) => {
     console.log(data);
@@ -115,3 +121,33 @@ d3.json("https://api.open-meteo.com/v1/forecast?latitude=49.904&longitude=10.87&
         .attr("stroke-width", 2)
         .attr("d", line);
 })
+
+
+// AUFGABENTEIL > Frontend: "Beim Aufrufen der SPA sollen zunächst die JSON-Daten abgefragt werden.
+// Diese sollen von Eurer lokal gehosteten API werden.""
+
+// Fetch-Anfragen
+
+// Temperaturdaten vom Server holen
+
+fetch("http://localhost:3000/wetterdaten/temperatur")
+  .then((response) => response.json())
+  .then((temperaturDaten) => {
+    console.log("Temperaturdaten:", temperaturDaten);
+    // Hier kannst du später die Temperaturdaten weiterverarbeiten (z. B. ins Diagramm einfügen)
+  })
+  .catch((error) => {
+    console.error("Fehler beim Abrufen der Temperaturdaten:", error);
+  });
+
+// Wolkenbedeckungsdaten vom Server holen
+fetch("http://localhost:3000/wetterdaten/wolkenbedeckung")
+  .then((response) => response.json())
+  .then((wolkenDaten) => {
+    console.log("Wolkenbedeckungsdaten:", wolkenDaten);
+    // Hier kannst du später die Wolkendaten weiterverarbeiten (z. B. ins Diagramm einfügen)
+  })
+  .catch((error) => {
+    console.error("Fehler beim Abrufen der Wolkendaten:", error);
+  });
+  
