@@ -48,3 +48,8 @@ app.get('/wetterdaten/wolkenbedeckung', (req, res) => {
 });
 
 
+// --- Server starten ---
+// Der Server wird gestartet und bekommt die Anweisung, auf Port 3000 zu hören. 
+app.listen(port, () => {
+  console.log(`Server läuft auf http://localhost:${port}`);
+});

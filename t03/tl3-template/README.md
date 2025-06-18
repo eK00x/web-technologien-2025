@@ -3,7 +3,7 @@
 Authors: Alice Alferink & Emilia Kistowski
 
 ## Description
-- > To be written
+The Website "Festival am See - Wetter" is a single page application that allows to monitor waether data for the upcoming days. 
 
 
 ## Folder Structure
@@ -27,7 +27,8 @@ Authors: Alice Alferink & Emilia Kistowski
 
 
 ## Used Resources
--> To be listed
+-> to be listed
+
 
 ## Testing
 The application was tested on

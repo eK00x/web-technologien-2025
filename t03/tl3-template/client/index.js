@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Definition der drawLineChart Funktion
 function drawLineChart(data) {
-    const margin = { top: 20, right: 30, bottom: 60, left: 60 };
+    const margin = { top: 20, right: 190, bottom: 60, left: 40 };
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -146,7 +146,7 @@ function drawLineChart(data) {
     // y-Achse (0–100%)
     const y = d3
         .scaleLinear()
-        .domain([0, 100])
+        .domain([0, 100]) // werte von 0 bis 100
         .range([height, 0]);
 
     // X-Achse unten hinzufügen mit Datumsformat YYYY-MM-DD und geneigten Labels
