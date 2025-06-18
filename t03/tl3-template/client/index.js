@@ -60,6 +60,9 @@ fetch("http://localhost:3000/wetterdaten/temperatur")
             .innerRadius(0)
             .outerRadius(radius);
 
+        // Eigene Farben definieren: z. B. orange für >20 °C, blau für ≤20 °C
+        const colors = ["#2484BF", "#ffc107"];
+        
         // Pfade (Sektoren) hinzufügen
         svg.selectAll('path')                               // sucht im SVG nach allen vorhandenen <path>
             .data(data_ready)                                 // verknüpft berechnete Segmente (data_ready) mit der Auswahl.
@@ -67,7 +70,7 @@ fetch("http://localhost:3000/wetterdaten/temperatur")
             // erstelle jetzt ein neues Element."
             .append('path')                                   // für jedes Datenelement ein neues <path>-Element in das SVG einfügen
             .attr('d', arc)                                   // definiert die Form des Segments mit dem Arc-Generator
-            .attr('fill', (d, i) => d3.schemeCategory10[i])   // gibt jedem Segment andere Farbe: aus Standardfarbschema d3.schemeCategory10
+            .attr('fill', (d, i) => colors[i])                // hier deine eigenen Farben
             .attr('stroke', 'white')                          // weißer Rand um jedes Segment (damit man die Stücke besser sieht) 
             .style('stroke-width', '2px');                    // Rand in px-Breite
 
