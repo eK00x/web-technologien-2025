@@ -200,7 +200,8 @@ fetch("http://localhost:3000/wetterdaten/wolkenbedeckung")
 console.log("Script geladen");
 
 // --- Konstanten für das Diagramm ---
-const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+// definieren die Größe und die Ränder des Zeichenbereichs
+const margin = { top: 20, right: 20, bottom: 30, left: 40 }; // Platz außen um das Diagramm
 const width = 650 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 
@@ -228,47 +229,57 @@ fetch("http://localhost:3000/wetterdaten/temperatur")
     const radius = Math.min(width, height) / 2 * 0.7;
 
     // SVG Container anlegen
-    const svg = d3.select("#piechart")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
+    const svg = d3.select("#piechart")                  //sucht im DOM (html-doc) ein Element mit der ID #piechart und wählt es aus
+      .append("svg")                                    //fügt in dieses Element ein <svg>-Element ein
+      .attr("width", width + margin.left + margin.right)  //setzt  Breite des SVG entsprechend der gewünsch. Größe + Rändern
+      .attr("height", height + margin.top + margin.bottom)  //dasselbe für Höhe
+      .append("g")                                        //fügt eine Gruppe in das SVG ein
       
+    // Verschiebt die Gruppe (<g>) um 160 px nach rechts und 170 px nach unten.
+    // Dadurch wird der Ursprung des Koordinatensystems der Gruppe verlagert —
+    // sinnvoll z. B. um ein Kreisdiagramm im SVG zu zentrieren.
       .attr("transform", "translate(160, 170)");
 
-
-
       
-    // Pie Generator
+   // Pie-Generator (rechnet auf Basis der Daten aus, wie groß jedes Segment ist)
+   // Berechnet für jedes Datenobjekt (d.value), wie groß sein Anteil im Kreisdiagramm ist (als Winkel in Radiant).
+   // Die Methode .value(d => d.value) gibt an, dass für jedes Datenobjekt der Wert in d.value die Größe des jeweiligen Kreisstücks bestimmt.
+   // Der Generator berechnet daraus Start- und Endwinkel für jedes Segment eines Kreisdiagramms.
     const pie = d3.pie().value(d => d.value);
     const data_ready = pie(data);
 
-    // Arc Generator
+    // Arc Generator (zeichnet ein Segment auf Basis der Winkel)
+    // Erstellt eine Funktion, die einen Bogen für das Kreisdiagramm zeichnet.
+    // Der innere Radius ist 0 (beginnt in der Mitte), der äußere Radius bestimmt die Größe.
     const arc = d3.arc()
       .innerRadius(0)
       .outerRadius(radius);
 
     // Pfade (Sektoren) hinzufügen
-    svg.selectAll('path')
-      .data(data_ready)
-      .enter()
-      .append('path')
-      .attr('d', arc)
-      .attr('fill', (d, i) => d3.schemeCategory10[i])
-      .attr('stroke', 'white')
-      .style('stroke-width', '2px');
+    svg.selectAll('path')                               // sucht im SVG nach allen vorhandenen <path>
+      .data(data_ready)                                 // verknüpft berechnete Segmente (data_ready) mit der Auswahl.
+      .enter()                                          // "Für alle Daten, für die noch kein passendes Element existiert, 
+                                                        // erstelle jetzt ein neues Element."
+      .append('path')                                   // für jedes Datenelement ein neues <path>-Element in das SVG einfügen
+      .attr('d', arc)                                   // definiert die Form des Segments mit dem Arc-Generator
+      .attr('fill', (d, i) => d3.schemeCategory10[i])   // gibt jedem Segment andere Farbe: aus Standardfarbschema d3.schemeCategory10
+      .attr('stroke', 'white')                          // weißer Rand um jedes Segment (damit man die Stücke besser sieht) 
+      .style('stroke-width', '2px');                    // Rand in px-Breite
 
     // Beschriftungen hinzufügen
-    svg.selectAll('text')
-      .data(data_ready)
-      .enter()
-      .append('text')
-      .text(d => d.data.label)
-      .attr('transform', d => `translate(${arc.centroid(d)})`)
-      .style('text-anchor', 'middle')
-      .style('font-size', '14px')
-      .style('fill', '#000');  // schwarz als Textfarbe, falls notwendig
-  })
-  .catch(err => {
-    console.error("Fehler beim Laden der Daten:", err);
-  });
+    svg.selectAll('text')                                      // Sucht im SVG nach allen vorhandenen <text>-Elementen
+      .data(data_ready)                                        // Verknüpft berechneten Segmente (data_ready) mit der Auswahl
+      .enter()                                                 // "Für alle Daten, für die noch kein passendes Element existiert, 
+                                                               // erstelle jetzt ein neues Element."
+      .append('text')                                          // Erzeuge ein neues <text>-Element
+      .text(d => d.data.label)                                 // Setzt Text auf Label aus den Daten
+      .attr('transform', d => `translate(${arc.centroid(d)})`) // Positioniert Text in der Mitte des jeweiligen Kreisstücks
+      .style('text-anchor', 'middle')                          // Zentriert Text horizontal
+      .style('font-size', '14px')                              // Setzt Schriftgröße
+      .style('fill', '#000');                                  // Setzt Textfarbe auf schwarz
+
+    })
+    .catch(err => {
+      console.error("Fehler beim Laden der Daten:", err); // Fehlerbehandlung beim Laden der Daten
+    });
+
