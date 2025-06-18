@@ -3,31 +3,45 @@
 Authors: Alice Alferink & Emilia Kistowski
 
 ## Description
-The Website "Festival am See - Wetter" is a single page application that allows to monitor waether data for the upcoming days. 
-
+The Website "Festival am See - Wetter" is a single page application that allows to monitor waether data for the upcoming days. The applicstion is divided into a frontend and a backend. In the backend a local API is provided by a server. The Frontend connects as client to the API. It fetches the weather data and visualizes them. Data about the temperatore are shown as a Pie Chart. A line chart visualizes the cloudyness in perent per hour. 
+A header on top of the page as well as two text boxes, next to the diagrams explain the visualizations with a few words. 
 
 ## Folder Structure
-- client
-    - index.html
-    - index.js
-- server
-    - index.js
-    - temperatur_stuendlich.json
-    - wolkenbedeckung_stuendlich.json
+- Teilleistung_03
+    - client
+        - index.html
+        - index.js
+    - server
+        - index.js
+        - temperatur_stuendlich.json
+        - wolkenbedeckung_stuendlich.json
+        - package.json
+    - node_modules
+    - package-lock.json
     - package.json
+    - README.md
 
+
+## Setup Backend
+- install VS Code
+- install node.js
+- install npm packages
+- install cors
 
 ## How to Start/Use the Website
--> To be corrected
 1. Step: Download the folder.
 2. Step: If needed, unzip the folder.
-3. Step: Open the folder in your file explorer and click on the file "home.html" (this should open the file in the Browser. If not, right click on the file and the "open with" > your browser.)
-4. Step: Navigate through the one-pager via scrolling or jump to the needed section via the navigation bar. 
-5. Step: Enjoy! 😊
+3. Step: Open the folder in VS Coder or an other IDE with an terminal. 
+5. Step: Run the command: "npm run server" .
+6. Step: Open second teminal and run: "npm run client" . The SPA should open itself automatically in the browser. 
+7. Step: Enjoy! 😊
 
 
-## Used Resources
--> to be listed
+## Testing
+The application was tested on
+- Brave Browser
+- Firefox
+- Chrome
 
 
 ## Testing
