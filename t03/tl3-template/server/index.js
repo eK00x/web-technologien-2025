@@ -1,8 +1,12 @@
 import express from "express"; // Import von express, dem Webframework mit dem Webserver und APIs erstellt werden können.
 import fs from "fs"; // fs ist das eingebaute File-System Modul von Node.js, mit dem können Dateien gelesen oder geschrieben werden
+import cors from "cors"; // cors einbinden um cors erlaubnis zu geben
 
 // Erstellen einer neuen Express-Anwendung. Mit app können neue Routen (URL Endpunkte) definiert werden.
 const app = express();
+
+// cors Erlaubnis geben
+app.use(cors());
 
 // Definiert die Route zur Startseite "/". 
 // Bei Aufruf von dieser, bekommt der Nutzer momentan die Antwort: "Server is up and running."
@@ -30,3 +34,5 @@ app.get("/wetterdaten/wolkenbedeckung", (req, res) => {
   res.json(wolkenDaten);
 });
 
+//http://localhost:3000/wetterdaten/temperatur
+//http://localhost:3000/wetterdaten/wolkenbedeckung
