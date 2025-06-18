@@ -103,8 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
 
-
-
         .then((wolkenDaten) => {  // ein neues Array mit x-y paaren wird erstellt.  [{},{},{}]
             if (
                 !wolkenDaten.hourly ||

@@ -10,8 +10,6 @@ const app = express();        // Erstellen einer neuen Express-Anwendung. Mit ap
 const port = 3000;
 
 
-
-
 // --- CORS aktivieren ---
 app.use(cors()); //  <--- unbedingt vor den Routen aufrufen
 
@@ -48,4 +46,5 @@ app.get('/wetterdaten/temperatur', (req, res) => {
 app.get('/wetterdaten/wolkenbedeckung', (req, res) => {
   res.json(wolkenDaten);
 });
+
 
