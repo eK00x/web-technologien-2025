@@ -61,8 +61,8 @@ fetch("http://localhost:3000/wetterdaten/temperatur")
             .outerRadius(radius);
 
         // Eigene Farben definieren: z. B. orange für >20 °C, blau für ≤20 °C
-        const colors = ["#2484BF", "#ffc107"];
-        
+        const colors = ["#ffc107", "#0d6efd"];
+
         // Pfade (Sektoren) hinzufügen
         svg.selectAll('path')                               // sucht im SVG nach allen vorhandenen <path>
             .data(data_ready)                                 // verknüpft berechnete Segmente (data_ready) mit der Auswahl.
