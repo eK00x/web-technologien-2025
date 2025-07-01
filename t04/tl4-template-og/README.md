@@ -69,21 +69,14 @@ The app includes a form for entering feedback (username, rating, title, and mess
 - Teilleistung_04
     - 
 
-## Setup Backend
+## Setup Instructions
 1. Install VS Code or another IDE with terminal support.
 2. Install Node.js (v18 or later recommended).
 3. Open the project folder in your IDE.
 4. Run npm install to install all required packages.
 5. Start the development server with: npm run dev
 6. The application should open automatically in your browser. If not, visit http://localhost:5173.
-
-## How to Start/Use the Website
-1. Step: Download the folder.
-2. Step: If needed, unzip the folder.
-3. Step: Open the folder in VS Coder or an other IDE with a terminal. 
-5. Step: Run the command: "npm run server" .
-6. Step: Open a second teminal and run: "npm run client" . The SPA should open itself automatically in the browser. 
-7. Step: Enjoy! 😊
+7. Enjoy! 😊
 
 ## Testing
 The application was tested on
