@@ -1,4 +1,6 @@
 <script>
+  import { reviews } from '../stores.js'; // Pfad ggf. anpassen
+
   // State-Variablen, die an die Inputs gebunden werden
   let username = "";
   let rating = 1;
@@ -9,9 +11,19 @@
   function submit(event) {
     event.preventDefault();
 
-    console.log({ username, rating, title, text });
+    // Neuen Erfahrungsbericht in den Store einfügen
+    reviews.update((items) => [
+      ...items,
+      {
+        id: Date.now(), // eindeutige ID
+        username,
+        rating: Number(rating),
+        title,
+        text
+      }
+    ]);
 
-    // Optional: Felder zurücksetzen nach dem Absenden
+    // Felder zurücksetzen
     username = "";
     rating = 1;
     title = "";
@@ -20,20 +32,19 @@
 </script>
 
 <style>
-  /* Container für Label + Input nebeneinander */
   .form-row {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem; /* entspricht Bootstrap mb-3 */
+    margin-bottom: 1rem;
   }
-  /* Label links mit fixer Breite */
+
   .form-row label {
     width: 35%;
-    margin-bottom: 0; /* entfernt den Abstand unter Label */
+    margin-bottom: 0;
     padding-right: 0.5rem;
     text-align: right;
   }
-  /* Input nimmt den restlichen Platz */
+
   .form-row input,
   .form-row textarea {
     width: 65%;
@@ -98,7 +109,6 @@
         ></textarea>
       </div>
     </div>
-
 
     <!-- Spalte 3 -->
     <div class="col-lg-3 d-flex align-items-end">

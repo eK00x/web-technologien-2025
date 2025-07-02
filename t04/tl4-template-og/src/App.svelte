@@ -16,6 +16,8 @@
   <!-- Header mit Logo und Überschrift -->
   <Header />
 
+  <!-- Formular für Erfahrungsberichte -->
+  <Form />
 
   <!-- Anzeige der Erfahrungsberichte in Cards -->
   <Reviews />

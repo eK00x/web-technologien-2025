@@ -70,6 +70,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+<style>
+  .empty-message {
+    margin-top: 0;      /* kein Abstand oben */
+    margin-bottom: 1.5rem; /* Abstand unten */
+    font-style: italic;
+    color: #666;
+  }
+</style>
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
