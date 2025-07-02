@@ -28,6 +28,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  width: 100%;              /* NEU: Body nimmt volle Breite ein */
+  box-sizing: border-box;   /* NEU: Box-Sizing setzen für korrekte Breitenberechnung */
 }
 
 h1 {
@@ -40,9 +43,11 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 90%;              /* NEU: #app nimmt 90% Breite seines Containers ein */
+  max-width: 1140px;        /* GEÄNDERT: max-width von 1280px auf 1140px für bessere Lesbarkeit */
+  margin: 0 auto;           
+  padding: 1rem 2rem;       /* GEÄNDERT: Padding angepasst für angenehmen Innenabstand */
+  box-sizing: border-box;   /* NEU: Für Padding mitgerechnet */
   text-align: center;
 }
 
