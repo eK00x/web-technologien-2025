@@ -7,16 +7,16 @@
 
 <style>
   .review-card {
-    width: 100%;
+    width: 80%;               /* volle Spaltenbreite */
     min-height: 200px;
     background-color: #fdfdfd;
     padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.2s ease;
+    text-align: left;
   }
 
   .review-card:hover {
@@ -31,24 +31,36 @@
   }
 
   .username {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 0.92rem;
+    color: black;
+    font-weight: 600;
   }
 
   .stars {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     white-space: nowrap;
+    display: flex;
+    gap: 2px;
+  }
+
+  .stars i {
+    color: gold;
+  }
+
+  .stars i.regular {
+    color: lightgray;
   }
 
   .title {
-    font-weight: bold;
+    font-weight: 800;
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
   }
 
   .text {
-    font-size: 0.95rem;
-    color: #333;
+    font-size: 0.92rem;
+    color: black;
+    font-weight: 500;
   }
 </style>
 
@@ -57,10 +69,10 @@
     <div class="username">{username}</div>
     <div class="stars">
       {#each Array(rating) as _, i}
-        <span style="color: gold;">★</span>
+        <i class="fa-solid fa-star"></i>
       {/each}
       {#each Array(5 - rating) as _, i}
-        <span style="color: lightgray;">★</span>
+        <i class="fa-regular fa-star regular"></i>
       {/each}
     </div>
   </div>

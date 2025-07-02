@@ -4,22 +4,15 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  /* Grundfarben */
+  color: #000000;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -29,8 +22,22 @@ body {
   min-width: 320px;
   min-height: 100vh;
 
-  width: 100%;              /* NEU: Body nimmt volle Breite ein */
-  box-sizing: border-box;   /* NEU: Box-Sizing setzen für korrekte Breitenberechnung */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Kein Hintergrundbild */
+  background-color: #ffffff;
+  color: #000000;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
 }
 
 h1 {
@@ -42,13 +49,23 @@ h1 {
   padding: 2em;
 }
 
+/* #app Container volle Breite */
 #app {
-  width: 90%;              /* NEU: #app nimmt 90% Breite seines Containers ein */
-  max-width: 1140px;        /* GEÄNDERT: max-width von 1280px auf 1140px für bessere Lesbarkeit */
-  margin: 0 auto;           
-  padding: 1rem 2rem;       /* GEÄNDERT: Padding angepasst für angenehmen Innenabstand */
-  box-sizing: border-box;   /* NEU: Für Padding mitgerechnet */
+  width: 100%;
+  max-width: 100%;    /* max-width entfernen */
+  margin: 0;          /* kein zentrieren */
+  padding: 0;         /* padding optional */
+  box-sizing: border-box;
   text-align: center;
+}
+
+/* main mit .content-container volle Breite */
+.content-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem 2rem; /* optional */
+  box-sizing: border-box;
 }
 
 button {
@@ -59,19 +76,21 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
-
+/* Helles Farbschema für Geräte mit Light Mode */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -82,5 +101,6 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+    color: #213547;
   }
 }

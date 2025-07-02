@@ -1,11 +1,10 @@
 <script>
-  import { reviews } from '../stores.js'; // ggf. Pfad anpassen
+  import { reviews } from '../stores.js';
   import Card from './Card.svelte';
   import { onMount } from 'svelte';
 
   let entries = [];
 
-  // Store abonnieren
   const unsubscribe = reviews.subscribe(value => {
     entries = value;
   });
@@ -16,6 +15,10 @@
 </script>
 
 <style>
+  .reviews-wrapper {
+    padding: 2rem;
+  }
+
   .empty-message {
     margin-top: 2rem;
     font-style: italic;
@@ -23,23 +26,37 @@
     text-align: center;
   }
 
-  .reviews-wrapper {
-    padding: 2rem;
+  /* Container für die Karten */
+  .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Abstand zwischen Cards */
+    justify-content: center; /* Standard: zentriert */
+  }
+
+  /* Wenn genau 2 Einträge: je 50% Breite */
+  .reviews-container.two > div {
+    flex: 0 0 48%; /* knapp 50%, mit etwas Abstand */
+    max-width: 48%;
+  }
+
+  /* Wenn nur 1 Eintrag: Karte wird max. 75% breit und zentriert */
+  .reviews-container.one > div {
+    flex: 0 0 75%;
+    max-width: 75%;
   }
 </style>
 
 <div class="container reviews-wrapper">
-  <div class="row">
-    {#if entries.length === 0}
-      <div class="col-12">
-        <p class="empty-message">Noch keine Erfahrungsberichte vorhanden.</p>
-      </div>
-    {:else}
+  {#if entries.length === 0}
+    <p class="empty-message">Noch keine Erfahrungsberichte vorhanden.</p>
+  {:else}
+    <div class="reviews-container {entries.length === 2 ? 'two' : entries.length === 1 ? 'one' : ''}">
       {#each entries.slice().reverse() as item}
-        <div class="col-md-6 mb-4 d-flex">
+        <div>
           <Card {...item} />
         </div>
       {/each}
-    {/if}
-  </div>
+    </div>
+  {/if}
 </div>
