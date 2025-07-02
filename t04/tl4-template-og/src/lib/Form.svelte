@@ -1,21 +1,19 @@
+<!-- ReviewForm.svelte -->
 <script>
-  import { reviews } from '../stores.js'; // Pfad ggf. anpassen
+  import { reviews } from '../stores.js';
 
-  // State-Variablen, die an die Inputs gebunden werden
   let username = "";
   let rating = 1;
   let title = "";
   let text = "";
 
-  // Funktion zum Absenden des Formulars
   function submit(event) {
     event.preventDefault();
 
-    // Neuen Erfahrungsbericht in den Store einfügen
     reviews.update((items) => [
       ...items,
       {
-        id: Date.now(), // eindeutige ID
+        id: Date.now(),
         username,
         rating: Number(rating),
         title,
@@ -23,7 +21,6 @@
       }
     ]);
 
-    // Felder zurücksetzen
     username = "";
     rating = 1;
     title = "";
@@ -32,6 +29,8 @@
 </script>
 
 <style>
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
+
   .form-row {
     display: flex;
     align-items: center;
@@ -46,8 +45,25 @@
   }
 
   .form-row input,
+  .form-row select,
   .form-row textarea {
     width: 65%;
+  }
+
+  /* Einheitlicher Dropdown-Pfeil */
+  select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23666%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%207l5%205%205-5H5z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+  }
+
+  #rating {
+    width: 4rem;
   }
 </style>
 
@@ -69,15 +85,18 @@
 
       <div class="form-row">
         <label for="rating">Rating</label>
-        <input
+        <select
           id="rating"
-          type="number"
           bind:value={rating}
-          min="1"
-          max="5"
           required
           class="form-control"
-        />
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
 
       <div class="form-row">
@@ -96,7 +115,7 @@
     <!-- Spalte 2 -->
     <div class="col-lg-5">
       <div class="mb-3 h-100">
-        <label for="text" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+        <label for="text" class="form-label w-100 text-start mb-2">
           Deine Erfahrungen
         </label>
         <textarea
