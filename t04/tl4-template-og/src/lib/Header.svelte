@@ -5,34 +5,35 @@
 <style>
   header {
     display: flex;
-    justify-content: space-between; /* Text links, Logo rechts */
-    align-items: center;
-    width: 100%;               /* Volle Breite */
-    box-sizing: border-box;    /* Padding zählt zur Breite */
+    justify-content: center; /* Text + Logo mittig horizontal */
+    align-items: center;     /* Vertikal zentriert */
     padding: 1rem 2rem;
-    background-color: #f5f5f5; /* Optional */
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
   }
 
   .text-container {
-    max-width: 60%;
+    max-width: 60%;          /* Optional: begrenzt die Textbreite */
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.25rem 0;
-    font-weight: bold;
+    font-size: 1.9rem;
+    margin: 0 0 0.75rem 0; /* Mehr Abstand unter h1 */
+    font-weight: 600;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: 0;
     font-weight: normal;
     color: #555;
   }
 
   img {
-    width: 150px;
+    width: 160px;
     height: auto;
+    flex-shrink: 0;          /* Logo nicht schrumpfen lassen */
   }
 </style>
 
@@ -41,6 +42,5 @@
     <h1>Erfahrungsberichte Rock am See 2025</h1>
     <h2>Teilt eure Erfahrungen mit uns und den anderen Besucher:innen</h2>
   </div>
-
   <img src={logo} alt="Festival-Logo" />
 </header>
