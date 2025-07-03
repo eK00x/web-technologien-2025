@@ -33,7 +33,7 @@
 
 
   img {
-    width: 200px;
+    width: 180px;
     height: auto;
     flex-shrink: 0;          /* Logo nicht schrumpfen lassen */
   }

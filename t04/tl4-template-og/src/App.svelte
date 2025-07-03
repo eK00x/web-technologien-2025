@@ -6,9 +6,15 @@
 </script>
 
 <div id="app">
-  <main class="content-container">
-    <Header />
-    <Form />
-    <Reviews />
-  </main>
+  <Header />
+
+  <!-- Hintergrundbild-Bereich mit Container für korrekte Ausrichtung -->
+  <div class="background-wrapper">
+    <div class="container">  <!-- Bootstrap Container für Grid-Ausgleich -->
+      <main class="content-container">
+        <Form />
+        <Reviews />
+      </main>
+    </div>
+  </div>
 </div>

@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
 
-  /* Grundfarben */
   color: #000000;
   background-color: #ffffff;
 
@@ -13,6 +12,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Globale Reset und Box Sizing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Verhindert horizontalen Scroll */
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 a {
@@ -34,35 +48,71 @@ h1 {
   padding: 2em;
 }
 
-/* #app Container volle Breite */
 #app {
-  width: 100%;
-  max-width: 100%;    /* max-width entfernen */
-  margin: 0;          /* kein zentrieren */
-  padding: 0;         /* padding optional */
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* main mit .content-container volle Breite */
-.content-container {
   width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
+/* Hintergrundbild-Bereich unter dem Header */
+.background-wrapper {
+  position: relative;
+  width: 100vw;         /* volle Breite des Viewports */
+  min-height: 600px;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 2rem 0;
+  color: white;
+  overflow: hidden;
+}
 
-/* Helles Farbschema für Geräte mit Light Mode */
+/* Overlay für bessere Lesbarkeit */
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Inhalt sichtbar über dem Overlay */
+.content-container {
+  position: relative;
+  z-index: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Formularelemente */
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 65%;
+  font-size: 0.85rem; /* Schriftgröße verkleinern */
+}
+
+textarea.form-control {
+  font-size: 0.85rem;
+  resize: none; 
+}
+
+/* Light Mode */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
     color: #213547;

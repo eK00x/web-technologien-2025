@@ -3,12 +3,17 @@
   export let rating;
   export let title;
   export let text;
+
+  const maxLength = 245; // maximale Zeichenanzahl
+
+  // Text kürzen, falls zu lang
+  $: shortenedText = text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 </script>
 
 <style>
   .review-card {
-    width: 100%;               /* volle Spaltenbreite */
-    min-height: 200px;
+    width: 400px;          /* feste Breite */
+    min-height: 220px;     /* Mindesthöhe für maximalen Inhalt */
     background-color: #208C81;
     padding: 1.5rem;
   
@@ -17,6 +22,7 @@
     justify-content: flex-start;
     transition: transform 0.2s ease;
     text-align: left;
+    box-sizing: border-box;
   }
 
   .review-card:hover {
@@ -32,7 +38,7 @@
 
   .username {
     font-size: 0.92rem;
-    color: black;
+    color: white;
     font-weight: 600;
   }
 
@@ -43,10 +49,12 @@
     gap: 2px;
   }
 
+  /* Gefüllte goldene Sterne */
   .stars i {
     color: gold;
   }
 
+  /* Gefüllte hellgraue Sterne für "leere" Sterne */
   .stars i.regular {
     color: lightgray;
   }
@@ -59,7 +67,7 @@
 
   .text {
     font-size: 0.92rem;
-    color: black;
+    color: white;
     font-weight: 500;
   }
 </style>
@@ -72,11 +80,12 @@
         <i class="fa-solid fa-star"></i>
       {/each}
       {#each Array(5 - rating) as _, i}
-        <i class="fa-regular fa-star regular"></i>
+        <!-- Hier fa-solid für hellgrau gefüllte Sterne -->
+        <i class="fa-solid fa-star regular"></i>
       {/each}
     </div>
   </div>
 
   <div class="title">{title}</div>
-  <div class="text">{text}</div>
+  <div class="text">{shortenedText}</div>
 </div>

@@ -82,10 +82,10 @@
 </style>
 
 <form on:submit={submit} class="container-fluid mt-4">
-  <div class="row gx-5 g-3">
+  <div class="row gx-5 g-3" style="margin-left: 2rem;">
   
     <!-- Spalte 1 -->
-    <div class="col-lg-4" style="padding-left: 6.5rem; padding-right: 2rem;">
+    <div class="col-lg-4" style="padding-left: 5.5rem; padding-right: 0rem;">
       <div class="form-row">
         <label for="username">Nutzername</label>
         <input
@@ -148,7 +148,7 @@
     </div>
 
     <!-- Spalte 3 -->
-    <div class="col-lg-3 d-flex align-items-end" style="padding-bottom: 1rem; margin-left: -12rem;">
+    <div class="col-lg-3 d-flex align-items-end" style="padding-bottom: 1rem; margin-left: -6rem;">
       <button 
         type="submit" 
         class="btn custom-submit-button"
