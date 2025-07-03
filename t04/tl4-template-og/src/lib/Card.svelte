@@ -9,7 +9,7 @@
   .review-card {
     width: 100%;               /* volle Spaltenbreite */
     min-height: 200px;
-    background-color: #fdfdfd;
+    background-color: #208C81;
     padding: 1.5rem;
   
     display: flex;

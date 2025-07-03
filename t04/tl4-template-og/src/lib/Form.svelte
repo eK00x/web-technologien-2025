@@ -1,4 +1,3 @@
-<!-- ReviewForm.svelte -->
 <script>
   import { reviews } from '../stores.js';
 
@@ -50,7 +49,6 @@
     width: 65%;
   }
 
-  /* Einheitlicher Dropdown-Pfeil */
   select.form-control {
     appearance: none;
     -webkit-appearance: none;
@@ -67,13 +65,27 @@
     border-radius: 0;
     border: 1px solid black;
   }
+
+  .custom-submit-button {
+    min-width: 140px;
+    border-radius: 24px;
+    padding: 0.2em;
+    background-color: #F2CC0F;
+    color: black;
+    border: none;
+  }
+
+  .custom-submit-button:hover {
+    background-color: #d4b10c;
+    color: white;
+  }
 </style>
 
 <form on:submit={submit} class="container-fluid mt-4">
   <div class="row gx-5 g-3">
   
     <!-- Spalte 1 -->
-    <div class="col-lg-4">
+    <div class="col-lg-4" style="padding-left: 6.5rem; padding-right: 2rem;">
       <div class="form-row">
         <label for="username">Nutzername</label>
         <input
@@ -119,7 +131,7 @@
     </div>
 
     <!-- Spalte 2 -->
-    <div class="col-lg-4" style="max-width: 100%;">
+    <div class="col-lg-5" style="max-width: 100%;">
       <div class="mb-3">
         <label for="text" class="form-label w-100 text-start mb-2">
           Deine Erfahrungen
@@ -130,20 +142,20 @@
           maxlength="250"
           required
           class="form-control h-100"
-          style=" min-height: 97px; max-width: 350px; border-radius: 0; border: 1px solid black;"
+          style="min-height: 97px; max-width: 320px; border-radius: 0; border: 1px solid black;"
         ></textarea>
       </div>
     </div>
 
     <!-- Spalte 3 -->
-    <div class="col-lg-4 d-flex align-items-end" style="padding-bottom: 1rem; margin-left: -1rem;">
+    <div class="col-lg-3 d-flex align-items-end" style="padding-bottom: 1rem; margin-left: -12rem;">
       <button 
         type="submit" 
-        class="btn btn-success" 
-        style="min-width: 140px; border-radius: 24px; padding: 0.2em 1.5em;"
+        class="btn custom-submit-button"
       >
         Bericht senden
       </button>
     </div>
+
   </div>
 </form>

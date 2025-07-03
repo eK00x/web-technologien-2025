@@ -7,10 +7,9 @@
     display: flex;
     justify-content: center; /* Text + Logo mittig horizontal */
     align-items: center;     /* Vertikal zentriert */
-    padding: 1rem 2rem;
     width: 100%;
     box-sizing: border-box;
-    background-color: #f5f5f5;
+    background-color: #F2B90F;
   }
 
   .text-container {
@@ -18,24 +17,29 @@
   }
 
   h1 {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     margin: 0 0 0.75rem 0; /* Mehr Abstand unter h1 */
     font-weight: 600;
   }
 
   h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0;
     font-weight: normal;
-    color: #555;
+    color: black;
+    font-weight: 600;
   }
 
+
+
   img {
-    width: 160px;
+    width: 200px;
     height: auto;
     flex-shrink: 0;          /* Logo nicht schrumpfen lassen */
   }
 </style>
+
+
 
 <header>
   <div class="text-container">
