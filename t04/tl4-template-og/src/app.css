@@ -19,7 +19,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Verhindert horizontalen Scroll */
-  width: 100vw;
+  width: 100%;        /* besser als 100vw wegen Scrollbar */
   box-sizing: border-box;
 }
 
@@ -29,6 +29,7 @@ html, body {
   box-sizing: inherit;
 }
 
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
@@ -39,15 +40,18 @@ a:hover {
   color: #535bf2;
 }
 
+/* Überschriften */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+/* Karten-Container */
 .card {
   padding: 2em;
 }
 
+/* Haupt-App Container */
 #app {
   width: 100%;
   max-width: 100%;
@@ -57,10 +61,11 @@ h1 {
   text-align: center;
 }
 
+
 /* Hintergrundbild-Bereich unter dem Header */
 .background-wrapper {
   position: relative;
-  width: 100vw;         /* volle Breite des Viewports */
+  width: 100vw;
   min-height: 600px;
   background-image: url('/background.jpg');
   background-size: cover;
@@ -89,7 +94,7 @@ h1 {
   padding-right: 1rem;
 }
 
-/* Formularelemente */
+/* Formularelemente: Eingaben, Selects, Textareas */
 .form-row input,
 .form-row select,
 .form-row textarea {
@@ -97,12 +102,13 @@ h1 {
   font-size: 0.85rem; /* Schriftgröße verkleinern */
 }
 
+
 textarea.form-control {
   font-size: 0.85rem;
-  resize: none; 
+  resize: none;
 }
 
-/* Light Mode */
+/* Light Mode Anpassungen */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -117,4 +123,217 @@ textarea.form-control {
     background-color: #f9f9f9;
     color: #213547;
   }
+}
+
+/* Review Card Styles (card.svelte) */
+.review-card {
+  width: 400px;          /* feste Breite */
+  min-height: 220px;     /* Mindesthöhe für Inhalt */
+  background-color: #208C81;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.2s ease;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.review-card:hover {
+  transform: scale(1.01);
+}
+
+.header-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  font-size: 0.92rem;
+  color: white;
+  font-weight: 600;
+}
+
+.stars {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  display: flex;
+  gap: 2px;
+}
+
+/* Gefüllte goldene Sterne */
+.stars i {
+  color: gold;
+}
+
+/* Leere Sterne hellgrau */
+.stars i.regular {
+  color: lightgray;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.text {
+  font-size: 0.92rem;
+  color: white;
+  font-weight: 500;
+}
+
+/* Form Styles (form.svelte) */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
+
+.form-main-row {
+  margin-left: 2rem;
+  margin-right: 0;
+}
+
+.form-col-left {
+  padding-left: 5.5rem;
+  padding-right: 0;
+}
+
+.form-col-middle {
+  max-width: 100%;
+}
+
+.form-col-right {
+  padding-bottom: 1rem;
+  margin-left: -6rem;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  width: 50%;
+  margin-bottom: 0;
+  padding-right: 0.8rem !important;
+  text-align: right;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 65%;
+}
+
+.custom-input {
+  height: 32px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.custom-select {
+  height: 32px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23666%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%207l5%205%205-5H5z%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.custom-textarea {
+  min-height: 97px !important;
+  max-width: 320px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.custom-submit-button {
+  min-width: 140px;
+  border-radius: 24px;
+  padding: 0.2em;
+  background-color: #F2CC0F;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-submit-button:hover {
+  background-color: #d4b10c;
+  color: white;
+}
+
+/* Header Styles (header.svelte) */
+.header {
+  display: flex;
+  justify-content: center; /* Text + Logo mittig horizontal */
+  align-items: center;     /* Vertikal zentriert */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F2B90F;
+}
+
+.text-container {
+  max-width: 60%;          /* Begrenzung der Textbreite */
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.75rem 0; /* Abstand unter h1 */
+  font-weight: 600;
+}
+
+.header h2 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+  color: black;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;          /* Logo nicht schrumpfen lassen */
+}
+
+/* Reviews Section (reviews.svelte) */
+.reviews-wrapper {
+  padding: 2rem;
+}
+
+.empty-message {
+  margin-top: 2rem;
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+/* Container für Review-Karten */
+.reviews-container {
+  display: flex;
+  gap: 4rem;  /* Abstand zwischen Cards */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Wenn nur eine Karte da ist, feste Breite */
+.reviews-container.one > div {
+  flex: 0 0 400px;
+}
+
+/* Bei zwei Karten feste Breite */
+.reviews-container.two > div {
+  flex: 0 0 400px;
+}
+
+/* Für mehr als 2 Karten flexibel mit maximal 400px */
+.reviews-container.more > div {
+  flex: 1 1 400px;
+  max-width: 400px;
 }
