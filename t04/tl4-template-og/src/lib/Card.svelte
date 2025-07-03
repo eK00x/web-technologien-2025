@@ -7,7 +7,7 @@
 
 <style>
   .review-card {
-    width: 80%;               /* volle Spaltenbreite */
+    width: 100%;               /* volle Spaltenbreite */
     min-height: 200px;
     background-color: #fdfdfd;
     padding: 1.5rem;

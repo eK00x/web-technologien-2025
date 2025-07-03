@@ -63,12 +63,15 @@
   }
 
   #rating {
-    width: 4rem;
+    width: 8rem;
+    border-radius: 0;
+    border: 1px solid black;
   }
 </style>
 
 <form on:submit={submit} class="container-fluid mt-4">
-  <div class="row g-3">
+  <div class="row gx-5 g-3">
+  
     <!-- Spalte 1 -->
     <div class="col-lg-4">
       <div class="form-row">
@@ -80,6 +83,7 @@
           maxlength="30"
           required
           class="form-control"
+          style="height: 32px; border-radius: 0; border: 1px solid black;"
         />
       </div>
 
@@ -90,6 +94,7 @@
           bind:value={rating}
           required
           class="form-control"
+          style="height: 32px"
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -108,13 +113,14 @@
           maxlength="30"
           required
           class="form-control"
+          style="height: 32px; border-radius: 0; border: 1px solid black;"
         />
       </div>
     </div>
 
     <!-- Spalte 2 -->
-    <div class="col-lg-5">
-      <div class="mb-3 h-100">
+    <div class="col-lg-4" style="max-width: 100%;">
+      <div class="mb-3">
         <label for="text" class="form-label w-100 text-start mb-2">
           Deine Erfahrungen
         </label>
@@ -124,13 +130,13 @@
           maxlength="250"
           required
           class="form-control h-100"
-          style="min-height: 170px;"
+          style=" min-height: 97px; max-width: 350px; border-radius: 0; border: 1px solid black;"
         ></textarea>
       </div>
     </div>
 
     <!-- Spalte 3 -->
-    <div class="col-lg-3 d-flex align-items-end">
+    <div class="col-lg-4 d-flex align-items-end" style="padding-bottom: 1rem; margin-left: -1rem;">
       <button 
         type="submit" 
         class="btn btn-success" 

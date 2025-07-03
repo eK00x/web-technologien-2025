@@ -29,22 +29,17 @@
   /* Container für die Karten */
   .reviews-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Abstand zwischen Cards */
+    flex: 0 0 400px; /* Kein Wachstum, kein Schrumpfen, feste Breite */
+    max-width: 100%; /* Sicherheit: nicht über Container hinaus */
+    /* flex-wrap: wrap; */
+    gap: 4rem;  /* Abstand zwischen Cards */
     justify-content: center; /* Standard: zentriert */
   }
 
-  /* Wenn genau 2 Einträge: je 50% Breite */
-  .reviews-container.two > div {
-    flex: 0 0 48%; /* knapp 50%, mit etwas Abstand */
-    max-width: 48%;
+.reviews-container.two > div {
+    flex: 0 0 400px;
   }
-
-  /* Wenn nur 1 Eintrag: Karte wird max. 75% breit und zentriert */
-  .reviews-container.one > div {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
+  
 </style>
 
 <div class="container reviews-wrapper">
