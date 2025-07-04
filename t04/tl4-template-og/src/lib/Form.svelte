@@ -1,5 +1,5 @@
 <script>
-  import { reviews } from '../stores.js';
+  import { reviews } from "../stores.js";
 
   let username = "";
   let rating = 1;
@@ -16,8 +16,8 @@
         username,
         rating: Number(rating),
         title,
-        text
-      }
+        text,
+      },
     ]);
 
     username = "";
@@ -29,7 +29,6 @@
 
 <form on:submit={submit} class="container-fluid mt-4 custom-form">
   <div class="row gx-5 g-3 form-main-row">
-
     <!-- Spalte 1 -->
     <div class="col-lg-4 form-col-left">
       <div class="form-row">
@@ -52,11 +51,11 @@
           required
           class="form-control custom-select"
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="1">(1)⭐</option>
+          <option value="2">(2)⭐⭐</option>
+          <option value="3">(3)⭐⭐⭐</option>
+          <option value="4">(4)⭐⭐⭐⭐</option>
+          <option value="5">(5)⭐⭐⭐⭐⭐</option>
         </select>
       </div>
 
@@ -91,13 +90,9 @@
 
     <!-- Spalte 3 -->
     <div class="col-lg-3 d-flex align-items-end form-col-right">
-      <button 
-        type="submit" 
-        class="btn custom-submit-button"
-      >
+      <button type="submit" class="btn custom-submit-button">
         Bericht senden
       </button>
     </div>
-
   </div>
 </form>

@@ -15,11 +15,14 @@
 }
 
 /* Globale Reset und Box Sizing */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Verhindert horizontalen Scroll */
-  width: 100%;        /* besser als 100vw wegen Scrollbar */
+  overflow-x: hidden;
+  /* Verhindert horizontalen Scroll */
+  width: 100%;
+  /* besser als 100vw wegen Scrollbar */
   box-sizing: border-box;
 }
 
@@ -99,7 +102,8 @@ h1 {
 .form-row select,
 .form-row textarea {
   width: 65%;
-  font-size: 0.85rem; /* Schriftgröße verkleinern */
+  font-size: 0.85rem;
+  /* Schriftgröße verkleinern */
 }
 
 
@@ -127,8 +131,10 @@ textarea.form-control {
 
 /* Review Card Styles (card.svelte) */
 .review-card {
-  width: 400px;          /* feste Breite */
-  min-height: 220px;     /* Mindesthöhe für Inhalt */
+  width: 400px;
+  /* feste Breite */
+  min-height: 220px;
+  /* Mindesthöhe für Inhalt */
   background-color: #208C81;
   padding: 1.5rem;
 
@@ -272,20 +278,24 @@ textarea.form-control {
 /* Header Styles (header.svelte) */
 .header {
   display: flex;
-  justify-content: center; /* Text + Logo mittig horizontal */
-  align-items: center;     /* Vertikal zentriert */
+  justify-content: center;
+  /* Text + Logo mittig horizontal */
+  align-items: center;
+  /* Vertikal zentriert */
   width: 100%;
   box-sizing: border-box;
   background-color: #F2B90F;
 }
 
 .text-container {
-  max-width: 60%;          /* Begrenzung der Textbreite */
+  max-width: 60%;
+  /* Begrenzung der Textbreite */
 }
 
 .header h1 {
   font-size: 2.2rem;
-  margin: 0 0 0.75rem 0; /* Abstand unter h1 */
+  margin: 0 0 0.75rem 0;
+  /* Abstand unter h1 */
   font-weight: 600;
 }
 
@@ -299,7 +309,8 @@ textarea.form-control {
 .logo {
   width: 180px;
   height: auto;
-  flex-shrink: 0;          /* Logo nicht schrumpfen lassen */
+  flex-shrink: 0;
+  /* Logo nicht schrumpfen lassen */
 }
 
 /* Reviews Section (reviews.svelte) */
@@ -317,23 +328,127 @@ textarea.form-control {
 /* Container für Review-Karten */
 .reviews-container {
   display: flex;
-  gap: 4rem;  /* Abstand zwischen Cards */
+  gap: 4rem;
+  /* Abstand zwischen Cards */
   justify-content: center;
   flex-wrap: wrap;
 }
 
 /* Wenn nur eine Karte da ist, feste Breite */
-.reviews-container.one > div {
+.reviews-container.one>div {
   flex: 0 0 400px;
 }
 
 /* Bei zwei Karten feste Breite */
-.reviews-container.two > div {
+.reviews-container.two>div {
   flex: 0 0 400px;
 }
 
 /* Für mehr als 2 Karten flexibel mit maximal 400px */
-.reviews-container.more > div {
+.reviews-container.more>div {
   flex: 1 1 400px;
   max-width: 400px;
+}
+
+@media (max-width: 991.98px) {
+  .form-main-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .form-col-left,
+  .form-col-middle,
+  .form-col-right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Label + Input/Select/Textarea zusammen mittig, Label über Input */
+  .form-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+  }
+
+  /* Label zentriert, untereinander */
+  .form-row label {
+    text-align: center !important;
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Inputs etc. mittig und 90% breit */
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  /* Button mittig */
+  .form-col-right button {
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+/*neu*/
+@media (max-width: 991.98px) {
+  .form-main-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .form-col-left,
+  .form-col-middle,
+  .form-col-right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .form-row {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .form-row label {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .form-row input,
+  .form-row select {
+    width: 80% !important;
+    margin: 0 auto !important;
+  }
+
+  textarea.form-control {
+    width: 320px !important;
+    /* feste Breite */
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .form-col-right {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .form-col-right button {
+    margin: 0 auto !important;
+    min-width: 140px !important;
+  }
 }
