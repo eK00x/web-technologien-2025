@@ -3,8 +3,8 @@
 Authors: Alice Alferink & Emilia Kistowski
 
 ## Description -> Update
-The Festival is over and the organizers of the festival want to provide an option to give feedback about the festival. This single-page-application gives festival visitors the opportunity to share their experinces and give a general rating from one to five stars. 
-T
+The Festival is over and the organizers of the festival want to provide an option to give feedback about the festival. This single-page-application gives festival visitors the opportunity to share their experinces and give a general rating from one to five stars. After submitting a review, it appears as a card on the Website. Through the use of the localStorage, the cards are still there after closing and reopening the Website on the same local browser. 
+
 
 ## Folder Structure
 📁 tl-template-og
