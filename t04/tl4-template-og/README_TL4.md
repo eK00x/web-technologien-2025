@@ -1,4 +1,4 @@
-# T04 Single-Page-Application für Erfahrungsberichte (Web-Technologien)
+# T04 Single-Page-Application for Festival Reviews (Web-Technologien)
 
 Authors: Alice Alferink & Emilia Kistowski
 
