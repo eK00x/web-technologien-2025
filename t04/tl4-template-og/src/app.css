@@ -451,4 +451,45 @@ textarea.form-control {
     margin: 0 auto !important;
     min-width: 140px !important;
   }
+
+  .header h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-left: 45px; /* oder padding-left */
+  }
+
+  .header h2 {
+    font-size: 0.9rem;
+    margin-left: 45px; /* oder padding-left */
+  }
+
+  .logo {
+    width: 180px;
+    height: auto;
+    padding-right: 10px;
+  }
 }
+
+@media (max-width: 768px) {
+  .form-col-left {
+    padding-left: 1rem !important; /* oder 0, wenn du alles linksbündig willst */
+    padding-right: 1rem !important;
+    margin: -1px;
+    margin: 0 auto;      /* horizontal mittig */
+    width: 90%;          /* oder feste max-Breite, z.B. 320px */
+    max-width: 320px;
+    margin: 0 auto;      /* horizontal mittig */
+  }
+
+  .form-main-row {
+    width: 90%;          /* oder feste max-Breite, z.B. 320px */
+    max-width: 320px;
+    margin: 0 auto;      /* horizontal mittig */
+  }
+
+  
+}
+
+
+
