@@ -3,7 +3,7 @@
 Authors: Alice Alferink & Emilia Kistowski
 
 ## Description -> Update
-The Festival is over and the organizers of the festival want to provide an option to give feedback about the festival. This single-page-application gives festival visitors the opportunity to share their experinces and give a general rating from one to five stars. After submitting a review, it appears as a card on the Website. Through the use of the localStorage, the cards are still there after closing and reopening the Website on the same local browser. 
+The festival has ended, and the organizers want to offer visitors a way to provide feedback. This single-page application allows festival attendees to share their experiences and rate the event with one to five stars. Once a review is submitted, it appears as a card on the website. Thanks to the use of localStorage, these review cards remain visible even after closing and reopening the site on the same local browser. 
 
 
 ## Folder Structure
