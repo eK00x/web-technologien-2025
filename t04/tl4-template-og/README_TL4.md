@@ -38,6 +38,7 @@ The festival has ended, and the organizers want to offer visitors a way to provi
 - install VS Code
 - install node.js
 - install npm packages (npm install)
+- install Svelte for VS Code
 
 ## How to Start/Use the Website -> Update
 1. Step: Download the folder.
