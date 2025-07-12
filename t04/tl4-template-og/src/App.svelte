@@ -1,19 +1,21 @@
 <script>
+  // Globale CSS-Datei importieren
   import './app.css';
-  import Header from './lib/Header.svelte';
-  import Form from './lib/Form.svelte';
-  import Reviews from './lib/Reviews.svelte';
+
+  // Komponenten importieren
+  import Header from './lib/Header.svelte'; // Import des Headers
+  import Form from './lib/Form.svelte';  // Import der Formulars
+  import Reviews from './lib/Reviews.svelte'; // Import von Reviews (verwaltet die Liste der Review)
 </script>
 
+<!-- Haupt-Wrapper der App -->
 <div id="app">
-  <Header />
-
-  <!-- Hintergrundbild-Bereich mit Container für korrekte Ausrichtung -->
-  <div class="background-wrapper">
-    <div class="container">  <!-- Bootstrap Container für Grid-Ausgleich -->
+  <Header /> <!-- Header-Komponente -->
+  <div class="background-wrapper">  <!-- Bereich mit Hintergrundbild -->
+    <div class="container">
       <main class="content-container">
-        <Form />
-        <Reviews />
+        <Form /> <!-- Formular-Komponente für Eingaben -->
+        <Reviews /> <!-- Reviews-Komponente -->
       </main>
     </div>
   </div>
