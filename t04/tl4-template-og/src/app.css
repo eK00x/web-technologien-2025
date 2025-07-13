@@ -1,145 +1,159 @@
+/* ==============================================================
+   BOOTSTRAP IMPORT – Nutzt Bootstrap 5.3.3 für grundlegendes Grid & Komponenten
+   ============================================================== */
+/* Bootstrap CSS wird per CDN eingebunden, um Grid-System und UI-Komponenten nutzen zu können */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
 
+/* ==============================================================
+   GLOBAL: Schrift, Farben und allgemeine Darstellungsqualität
+   ============================================================== */
+/* Grundlegende globale Stile, Schriftarten, Farben und Textoptimierungen */
 :root {
+  /* Schriftfamilie, bevorzugt Inter, dann System-Schriftarten als Fallback */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Zeilenhöhe und Schriftgewicht für gute Lesbarkeit */
   line-height: 1.5;
   font-weight: 400;
 
+  /* Automatische Anpassung an helles oder dunkles Theme des Systems */
   color-scheme: light dark;
 
+  /* Standardtextfarbe (schwarz) und Hintergrund (weiß) */
   color: #000000;
   background-color: #ffffff;
 
+  /* Optimierungen zur Schriftglättung und Renderingqualität */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Globale Reset und Box Sizing */
-html,
-body {
+/* Entfernt Browser-Standardabstände, sorgt für volle Breite und verhindert horizontales Scrollen */
+html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Verhindert horizontalen Scroll */
   width: 100%;
-  /* besser als 100vw wegen Scrollbar */
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* Links */
+/* ==============================================================
+   LINKS – Standardfarbe und Hoververhalten
+   ============================================================== */
+/* Linkstil: mittleres Gewicht, klare blaue Farbe, keine Unterstreichung außer geerbt */
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 
+/* Hoverfarbe für Links: etwas dunkleres Blau */
 a:hover {
   color: #535bf2;
 }
 
-/* Überschriften */
+/* ==============================================================
+   TYPOGRAFIE – Hauptüberschrift
+   ============================================================== */
+/* Hauptüberschrift sehr groß und kompakt */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* Karten-Container */
-.card {
-  padding: 2em;
-}
-
-/* Haupt-App Container */
+/* ==============================================================
+   APP-CONTAINER – Zentrale App-Struktur, z. B. für Vue/React
+   ============================================================== */
+/* Hauptcontainer mit voller Breite, zentriertem Text und Box-Sizing */
 #app {
   width: 100%;
   max-width: 100%;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   text-align: center;
 }
 
+/* ==============================================================
+   HEADER – Oberer Seitenbereich mit Logo und Text
+   ============================================================== */
+/* Header als flexbox, zentriert Inhalt horizontal und vertikal, gelber Hintergrund */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F2B90F; /* Gelber Hintergrund */
+}
 
-/* Hintergrundbild-Bereich unter dem Header */
+/* Logo links neben Text, fixierte Breite und etwas Abstand rechts */
+.logo {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0; /* Verhindert Schrumpfen */
+  padding-right: 10px;
+}
+
+/* Container für Überschrift und Untertitel, max. 60% Breite */
+.text-container {
+  max-width: 60%;
+}
+
+/* Überschrift im Header: mittlere Schriftgröße, Abstand nach unten, fett */
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+/* Untertitel im Header: kleinere Schrift, schwarz, ohne Abstand */
+.header h2 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+  color: black;
+}
+
+/* ==============================================================
+   BACKGROUND – Sektion mit Hintergrundbild und Overlay
+   ============================================================== */
+/* Bereich mit Vollbild-Hintergrundbild, Mindesthöhe, weißer Text und Overlay */
 .background-wrapper {
   position: relative;
   width: 100vw;
   min-height: 600px;
-  background-image: url('/background.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin: 0;
+  background: url('/background.jpg') center/cover no-repeat;
   padding: 2rem 0;
   color: white;
   overflow: hidden;
 }
 
-/* Overlay für bessere Lesbarkeit */
+/* Dunkles, halbtransparentes Overlay über dem Hintergrundbild für bessere Lesbarkeit */
 .background-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4); /* Transparenter Schwarzton */
   z-index: 0;
 }
 
-/* Inhalt sichtbar über dem Overlay */
+/* Container für Inhalte über dem Overlay, z-Index erhöht damit Inhalt sichtbar bleibt */
 .content-container {
   position: relative;
-  z-index: 1;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  z-index: 1; /* Inhalt liegt über Overlay */
+  padding: 0 1rem;
 }
 
-/* Formularelemente: Eingaben, Selects, Textareas */
-.form-row input,
-.form-row select,
-.form-row textarea {
-  width: 65%;
-  font-size: 0.85rem;
-  /* Schriftgröße verkleinern */
-}
-
-
-textarea.form-control {
-  font-size: 0.85rem;
-  resize: none;
-}
-
-/* Light Mode Anpassungen */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-    color: #213547;
-  }
-}
-
-/* Review Card Styles (card.svelte) */
+/* ==============================================================
+   REVIEW CARDS – Design der einzelnen Bewertungskarten
+   ============================================================== */
+/* Karte für einzelne Bewertungen: feste Breite, türkise Farbe, Padding, flexbox vertikal */
 .review-card {
   width: 400px;
-  /* feste Breite */
   min-height: 220px;
-  /* Mindesthöhe für Inhalt */
-  background-color: #208C81;
+  background-color: #208C81; /* Türkisgrün */
   padding: 1.5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -148,10 +162,12 @@ textarea.form-control {
   box-sizing: border-box;
 }
 
+/* Leichter Vergrößerungseffekt bei Hover */
 .review-card:hover {
   transform: scale(1.01);
 }
 
+/* Kopfzeile der Karte: flexbox mit Abstand zwischen Name und Sternen */
 .header-line {
   display: flex;
   justify-content: space-between;
@@ -159,20 +175,21 @@ textarea.form-control {
   margin-bottom: 0.5rem;
 }
 
+/* Benutzername fett und weiß */
 .username {
   font-size: 0.92rem;
   color: white;
   font-weight: 600;
 }
 
+/* Sternbewertung als flexbox mit Abstand zwischen Sternen */
 .stars {
   font-size: 1.2rem;
-  white-space: nowrap;
   display: flex;
   gap: 2px;
 }
 
-/* Gefüllte goldene Sterne */
+/* Gefüllte Sterne goldfarben */
 .stars i {
   color: gold;
 }
@@ -182,45 +199,90 @@ textarea.form-control {
   color: lightgray;
 }
 
+/* Bewertungstitel sehr fett und etwas größer */
 .title {
   font-weight: 800;
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
+/* Bewertungstext etwas kleiner, weiß und halbfett */
 .text {
   font-size: 0.92rem;
   color: white;
   font-weight: 500;
 }
 
-/* Form Styles (form.svelte) */
+/* ==============================================================
+   REVIEWS SECTION – Layout der gesamten Bewertungsübersicht
+   ============================================================== */
+/* Bereich um Bewertungen mit Abstand innen */
+.reviews-wrapper {
+  padding: 2rem;
+}
 
+/* Nachricht, wenn keine Bewertungen vorliegen, kursiv und zentriert */
+.empty-message {
+  margin-top: 2rem;
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+/* Flexbox-Container für Bewertungen mit Lücke und Umbruch */
+.reviews-container {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Flex-Verhalten je nach Anzahl der Karten: bei 1 oder 2 Karten fixe Breite */
+.reviews-container.one > div,
+.reviews-container.two > div {
+  flex: 0 0 400px;
+}
+
+/* Ab 3 Karten flexibles Layout mit max. Breite */
+.reviews-container.more > div {
+  flex: 1 1 400px;
+  max-width: 400px;
+}
+
+/* ==============================================================
+   FORMULARBEREICH – Bewertung abgeben
+   ============================================================== */
+/* Haupt-Formularreihe mit linksseitigem Abstand, rechts kein Abstand */
 .form-main-row {
   margin-left: 2rem;
   margin-right: 0;
 }
 
+/* Linke Spalte des Formulars mit viel links Padding */
 .form-col-left {
   padding-left: 5.5rem;
   padding-right: 0;
 }
 
+/* Mittlere Spalte nimmt ganze Breite */
 .form-col-middle {
   max-width: 100%;
 }
 
+/* Rechte Spalte mit Button hat unten Padding und negative linke Marge (überlappt?) */
 .form-col-right {
   padding-bottom: 1rem;
   margin-left: -6rem;
 }
 
+/* Formularzeile mit horizontalem flexbox-Layout und Abstand unten */
 .form-row {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
 
+/* Label nimmt 50% Breite, rechtsbündig mit Abstand rechts */
 .form-row label {
   width: 50%;
   margin-bottom: 0;
@@ -228,32 +290,39 @@ textarea.form-control {
   text-align: right;
 }
 
+/* Eingabefelder und Selects 65% Breite, kleine Schrift */
 .form-row input,
 .form-row select,
 .form-row textarea {
   width: 65%;
+  font-size: 0.85rem;
 }
 
-.custom-input {
+/* Textarea mit kleiner Schrift, keine Größenänderung erlaubt */
+textarea.form-control {
+  font-size: 0.85rem;
+  resize: none;
+}
+
+/* Standardisierte Eingabe- und Auswahlfelder mit fixierter Höhe und schwarzem Rahmen */
+.custom-input,
+.custom-select {
   height: 32px;
   border-radius: 0;
   border: 1px solid black;
 }
 
+/* Select-Feld mit eigenem Pfeil-Symbol als Hintergrundbild */
 .custom-select {
-  height: 32px;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23666%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%207l5%205%205-5H5z%22/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,..."); /* Pfeil-SVG, ggf. anpassen */
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem;
   padding-right: 2rem;
-  border-radius: 0;
-  border: 1px solid black;
 }
 
+/* Mehrzeiliges Textfeld mit fixer Mindesthöhe und max. Breite */
 .custom-textarea {
   min-height: 97px !important;
   max-width: 320px;
@@ -261,6 +330,7 @@ textarea.form-control {
   border: 1px solid black;
 }
 
+/* Stil für Absende-Button mit rundem Radius und gelbem Hintergrund */
 .custom-submit-button {
   min-width: 140px;
   border-radius: 24px;
@@ -271,141 +341,47 @@ textarea.form-control {
   cursor: pointer;
 }
 
+/* Button Hovereffekt: dunkleres Gelb, weiße Schrift */
 .custom-submit-button:hover {
   background-color: #d4b10c;
   color: white;
 }
 
-/* Header Styles (header.svelte) */
-.header {
-  display: flex;
-  justify-content: center;
-  /* Text + Logo mittig horizontal */
-  align-items: center;
-  /* Vertikal zentriert */
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #F2B90F;
+/* ==============================================================
+   LIGHT MODE – spezifische Anpassung für helles Farbschema
+   ============================================================== */
+/* Anpassungen bei hellem Systemfarbschema */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547; /* Dunklere Textfarbe */
+    background-color: #ffffff; /* Weißer Hintergrund */
+  }
+
+  /* Link-Hoverfarbe etwas heller */
+  a:hover {
+    color: #747bff;
+  }
+
+  /* Buttons hellgrauer Hintergrund und dunkle Schrift */
+  button {
+    background-color: #f9f9f9;
+    color: #213547;
+  }
 }
 
-.text-container {
-  max-width: 60%;
-  /* Begrenzung der Textbreite */
-}
-
-.header h1 {
-  font-size: 2.2rem;
-  margin: 0 0 0.75rem 0;
-  /* Abstand unter h1 */
-  font-weight: 600;
-}
-
-.header h2 {
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 600;
-  color: black;
-}
-
-.logo {
-  width: 180px;
-  height: auto;
-  flex-shrink: 0;
-  /* Logo nicht schrumpfen lassen */
-}
-
-/* Reviews Section (reviews.svelte) */
-.reviews-wrapper {
-  padding: 2rem;
-}
-
-.empty-message {
-  margin-top: 2rem;
-  font-style: italic;
-  color: white;
-  text-align: center;
-}
-
-/* Container für Review-Karten */
-.reviews-container {
-  display: flex;
-  gap: 4rem;
-  /* Abstand zwischen Cards */
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Wenn nur eine Karte da ist, feste Breite */
-.reviews-container.one>div {
-  flex: 0 0 400px;
-}
-
-/* Bei zwei Karten feste Breite */
-.reviews-container.two>div {
-  flex: 0 0 400px;
-}
-
-/* Für mehr als 2 Karten flexibel mit maximal 400px */
-.reviews-container.more>div {
-  flex: 1 1 400px;
-  max-width: 400px;
-}
-
+/* ==============================================================
+   RESPONSIVE – Optimierungen für Tablets und Smartphones
+   ============================================================== */
+/* Anpassungen bei Bildschirmbreiten kleiner 992px (Tablets, kleinere Geräte) */
 @media (max-width: 991.98px) {
+  /* Formularspalten untereinander statt nebeneinander für bessere Lesbarkeit */
   .form-main-row {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
 
-  .form-col-left,
-  .form-col-middle,
-  .form-col-right {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Label + Input/Select/Textarea zusammen mittig, Label über Input */
-  .form-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100%;
-  }
-
-  /* Label zentriert, untereinander */
-  .form-row label {
-    text-align: center !important;
-    width: 100%;
-    margin-bottom: 0.3rem;
-  }
-
-  /* Inputs etc. mittig und 90% breit */
-  .form-row input,
-  .form-row select,
-  .form-row textarea {
-    width: 90% !important;
-    margin: 0 auto;
-  }
-
-  /* Button mittig */
-  .form-col-right button {
-    width: auto;
-    min-width: 140px;
-  }
-}
-
-/*neu*/
-@media (max-width: 991.98px) {
-  .form-main-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
+  /* Jede Formularspalte nimmt 100% Breite und zentriert Inhalt */
   .form-col-left,
   .form-col-middle,
   .form-col-right {
@@ -416,81 +392,77 @@ textarea.form-control {
     margin-bottom: 1.5rem !important;
   }
 
+  /* Formularzeilen vertikal ausrichten, zentrieren, Abstand unten */
   .form-row {
     width: 100% !important;
-    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     margin-bottom: 1rem !important;
   }
 
+  /* Labels 100% breit, zentriert mit kleinem Abstand unten */
   .form-row label {
     width: 100% !important;
     text-align: center !important;
     margin-bottom: 0.3rem !important;
   }
 
+  /* Eingabefelder und Selects breiter, zentriert */
   .form-row input,
   .form-row select {
     width: 80% !important;
     margin: 0 auto !important;
   }
 
+  /* Textarea auf feste Breite zentriert */
   textarea.form-control {
     width: 320px !important;
-    /* feste Breite */
-    max-width: 320px !important;
     margin: 0 auto !important;
   }
 
+  /* Rechte Spalte zentriert ausrichten */
   .form-col-right {
     justify-content: center !important;
     align-items: center !important;
   }
 
+  /* Button zentriert und mit Mindestbreite */
   .form-col-right button {
     margin: 0 auto !important;
     min-width: 140px !important;
   }
 
+  /* Header-H1 Schriftgröße kleiner und Margin angepasst */
   .header h1 {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
     font-weight: bold;
-    margin-left: 45px; /* oder padding-left */
+    margin: 0 0 0.5rem 45px;
   }
 
+  /* Header-H2 kleinere Schrift und links eingerückt */
   .header h2 {
     font-size: 0.9rem;
-    margin-left: 45px; /* oder padding-left */
+    margin-left: 45px;
   }
 
-  .logo {
-    width: 180px;
-    height: auto;
-    padding-right: 10px;
+  .custom-submit-button {
+    max-width: 50% !important;        /* dynamisch, zentriert durch Eltern */
+    padding: 0.4em !important;    /* etwas mehr Padding */
   }
 }
 
+/* Weitere Anpassungen bei max. 768px (kleinere Smartphones) */
 @media (max-width: 768px) {
+  /* Linke Formularspalte wird schmaler und zentriert */
   .form-col-left {
-    padding-left: 1rem !important; /* oder 0, wenn du alles linksbündig willst */
+    padding-left: 1rem !important;
     padding-right: 1rem !important;
-    margin: -1px;
-    margin: 0 auto;      /* horizontal mittig */
-    width: 90%;          /* oder feste max-Breite, z.B. 320px */
-    max-width: 320px;
-    margin: 0 auto;      /* horizontal mittig */
+    margin: 0 auto;
+    width: 90%;
   }
 
-  .form-main-row {
-    width: 90%;          /* oder feste max-Breite, z.B. 320px */
-    max-width: 320px;
-    margin: 0 auto;      /* horizontal mittig */
+  .custom-submit-button {
+    max-width: 50% !important;        /* dynamisch, zentriert durch Eltern */
+    padding: 0.4em !important;    /* etwas mehr Padding */
   }
-
-  
 }
-
-
-
