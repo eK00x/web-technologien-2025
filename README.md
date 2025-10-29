@@ -18,7 +18,7 @@ Da es sich um voneinander unabhängige Webanwendungen handelt, folgen Sie bitte 
 
 | | |
 | :--- | :--- |
-| **Beschreibung** | [cite_start]Single-Page-Application (SPA) zur Organisation des "Rock am See"-Festivals mit Countdown, Informationen, Events und einer sortierbaren Liste von Helfern[cite: 108, 109]. |
+| **Beschreibung** | Single-Page-Application (SPA) zur Organisation des "Rock am See"-Festivals mit Countdown, Informationen, Events und einer sortierbaren Liste von Helfern. |
 | **Technologien** | HTML, CSS, JavaScript (Fetch API, DOM-Manipulation). |
 | **Funktionalität** | Fixierte Navigationsleiste, Sprungmarken (Anchors), Sortierfunktion für Helferliste (Name, Registrierungsdatum), CSS-Ladeanzeige während des Datenabrufs. |
 | **Ordnerstruktur** | `home.html`, `script.js`, `style.css`, `festival.jpg`, `README.md` |
@@ -31,9 +31,9 @@ Da es sich um voneinander unabhängige Webanwendungen handelt, folgen Sie bitte 
 
 | | |
 | :--- | :--- |
-| **Beschreibung** | SPA zur Wetteranalyse (Temperatur und Wolkenbedeckung) für das "Rock am See" Festival. [cite_start]Die Anwendung besteht aus einem Frontend (Client) und einem Backend (Express-Server)[cite: 37, 27]. |
+| **Beschreibung** | SPA zur Wetteranalyse (Temperatur und Wolkenbedeckung) für das "Rock am See" Festival. Die Anwendung besteht aus einem Frontend (Client) und einem Backend (Express-Server). |
 | **Technologien** | Node.js, Express.js (Backend), D3, Bootstrap (Frontend). |
-| **Visualisierung** | [cite_start]Kreisdiagramm (Temperatur über/unter Schwellenwert), Liniendiagramm (Wolkenbedeckung pro Stunde)[cite: 28, 29]. |
+| **Visualisierung** | Kreisdiagramm (Temperatur über/unter Schwellenwert), Liniendiagramm (Wolkenbedeckung pro Stunde). |
 | **Ordnerstruktur** | Enthält `./client`, `./server` (mit `index.js`, `temperatur_stuendlich.json`, `wolkenbedeckung_stuendlich.json`), `package.json`. |
 | **Setup & Start** | 1. Im Ordner **`t03`** (oder dessen Root-Verzeichnis) `npm install` ausführen. 2. **Terminal 1:** `npm run server` (startet API auf `http://localhost:3000`). 3. **Terminal 2:** `npm run client` (startet SPA). |
 
