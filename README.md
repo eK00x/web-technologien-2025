@@ -44,7 +44,7 @@ Da es sich um voneinander unabhängige Webanwendungen handelt, folgen Sie bitte 
 | | |
 | :--- | :--- |
 | **Beschreibung** | SPA zur Eingabe und Anzeige von Erfahrungsberichten in einem Grid-Layout. Die Daten werden lokal im Browser gespeichert. |
-| **Technologien** | **Svelte 5**, Bootstrap, localStorage, Vite. |
+| **Technologien** | Svelte 5, Bootstrap, localStorage, Vite. |
 | **Funktionalität** | Formular mit Validierung (Rating 1-5, max. Zeichenlängen), Anzeige als Card-Komponenten, Persistenz der Daten mittels `localStorage`. |
 | **Ordnerstruktur** | Svelte-Komponenten (`App.svelte`, `Header.svelte`, `Form.svelte`, `Reviews.svelte`, `Card.svelte`) und `stores.js`. |
 | **Setup & Start** | 1. Im Ordner **`t04`** `npm install` ausführen. 2. Entwicklungsserver starten: **`npm run dev`** (öffnet typischerweise `http://localhost:5173`). |
